@@ -1,4 +1,25 @@
-site_name: My Docs
+site_name: Livre Coding 🧑‍💻 - Pierre-Etienne
+
+repo_url: https://github.com/petoulemonde/livre_coding
+repo_name: petoulemonde/livre_coding
+
+nav:
+  - Homepage: "index.md"
+  - Comprendre: 
+    - "Pourquoi apprendre à coder ?": "Pourquoi apprendre à coder.md"
+    - "Comprendre le vibe coding": "Vibe coding la dernière couche d'abstraction en programmation.md"
+    - "Votre premier voyage de classe au pays dy CLI": "Votre premier voyage de classe au pays du CLI - blog.md"
+    - "Place de la blockchain en santé": "La blockchain en santé.md"
+  - Python:
+    - "Les Pandas plots backends": "The Power of Pandas Plots Backends - article.md"
+    - "Master the Python's documentation to make it an ally - article.md"
+  - Communiquer:
+    - "Créer mon portfolio avec GitHub Pages": "Full Guide to Building a Professional Portfolio with Python, Markdown, Git, and GitHub Pages - article.md"
+    - "Créer des pages guthub dynamiques avec Panel": "Dynamic GitHub Pages - Panel (pyodide-worker) - article.md"
 
 theme:
   name: material
+  logo: assets/intelligence-artificielle.png
+  favicon: assets/intelligence-artificielle.png
+  icon:
+    repo: fontawesome/brands/git-alt
