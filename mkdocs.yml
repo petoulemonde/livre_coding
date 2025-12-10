@@ -1,4 +1,7 @@
 site_name: Livre Coding 🧑‍💻 - Pierre-Etienne
+site_url: https://petoulemonde.github.io/livre_coding
+site_description: Mon livre de coding - Pierre-Etienne Toulemonde
+
 
 repo_url: https://github.com/petoulemonde/livre_coding
 repo_name: petoulemonde/livre_coding
@@ -6,16 +9,25 @@ repo_name: petoulemonde/livre_coding
 nav:
   - Homepage: "index.md"
   - Comprendre: 
-    - "Pourquoi apprendre à coder ?": "Pourquoi apprendre à coder.md"
-    - "Comprendre le vibe coding": "Vibe coding la dernière couche d'abstraction en programmation.md"
-    - "Votre premier voyage de classe au pays dy CLI": "Votre premier voyage de classe au pays du CLI - blog.md"
+    - "Comprendre le vibe coding": "Vibe Coding la dernière couche d'abstraction en programmation.md"
     - "Place de la blockchain en santé": "La blockchain en santé.md"
-  - Python:
-    - "Les Pandas plots backends": "The Power of Pandas Plots Backends - article.md"
-    - "Master the Python's documentation to make it an ally - article.md"
+    - "Documentation 2.0": "Documentation 2.0.md"
+  - Apprendre:
+    - "Liberté numérique": "L'importance de la liberté numérique.md"
+    - Windows:
+      - "Scoop": "Scoop un gestionnaire de logiciel Windows très utile - article.md"
+    - Le CLI:
+      - "Pourquoi apprendre à coder ?": "Pourquoi apprendre à coder.md"
+      - "Apprivoisez votre terminal": "Apprivoisez votre terminal - article.md"
+      - "Votre premier voyage de classe au pays dy CLI": "Votre premier voyage de classe au pays du CLI - blog.md"
+    - Python:
+      - "Les Pandas plots backends": "The Power of Pandas Plots Backends - article.md"
+      - "Master the Python's documentation to make it an ally - article.md"
   - Communiquer:
     - "Créer mon portfolio avec GitHub Pages": "Full Guide to Building a Professional Portfolio with Python, Markdown, Git, and GitHub Pages - article.md"
     - "Créer des pages guthub dynamiques avec Panel": "Dynamic GitHub Pages - Panel (pyodide-worker) - article.md"
+  - Economie de la technologie:
+    - "Article - Modèle économique des sites web et impact informationnelle.md"
 
 theme:
   name: material
@@ -23,3 +35,4 @@ theme:
   favicon: assets/intelligence-artificielle.png
   icon:
     repo: fontawesome/brands/git-alt
+

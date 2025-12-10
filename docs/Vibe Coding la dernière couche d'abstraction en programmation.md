@@ -1,42 +1,26 @@
----
-Start_date: 2025-06-03
-End_date: 
-tags:
-  - projet/format/article
-  - projet/plateforme/linkedin
-Status: 
-notes liées: 
----
-**Idée générale (1-2 phrases)**
+# Vibe Coding : la dernière couche d'abstraction en programmation
+*Qu'est-ce que le vibe coding ?*
 
-**Angle/accroche** : 
-
-**Braindump** :
-
----
-## Vibe Coding : la dernière couche d'abstraction en programmation
-Qu'est-ce que le vibe coding ?
-
-**Le vibe Coding**
+## Le vibe Coding
 Le vibe coding est l'approche de création d'applications consistant à dicter en quelques phrases l'application qu'on souhaite obtenir à une IA pour que cette dernière réalise le logiciel. Dans cette approche, les tâches de structuration de l'application, de codage et de test de l'application passe entre les mains de l'IA. Avec cette approche, la personne décrit sa vision au modèle qui la convertie en réalité en rédigeant le code sous-jacent. 
 
-**Histoire des langages de programmation : du bas niveau au haut niveau**
-Un processeur fonctionne avec un langage simple : des 0 et des 1, c'est le [[Langage binaire]]. Sauf que l'humain est bien incapable d'interagir avec l'ordinateur dans ce langage. Donc dès le début de l'ordinateur a été inventé un langage qui permet de parler à son ordinateur de façon un peu plus intelligible, c'est le langage [[Assembleur]]. C'est le premier langage de programmation créé, permettant de faire faire des actions à son ordinateur. Mais c'est un langage très simple, genre très très simple : addition soustraction multiplication division, des conditions et la possibilité de copier une adresse mémoire a une autre (je parle bien d'adresse mémoire, pas de fichier, genre l'adresse mémoire 77c33e83). Difficile d'imaginer une infrastructure standard d'entreprise d'aujourd'hui avec un langage aussi complexe. De plus chaque architecture de processeur a son propre assembleur, donc impossible d'écrire un code 1 fois et de l'exécuter partout.
+## Histoire des langages de programmation : du bas niveau au haut niveau 
+Un processeur fonctionne avec un langage simple : des 0 et des 1, c'est le langage binaire. Sauf que l'humain est bien incapable d'interagir avec l'ordinateur dans ce langage. Donc dès le début de l'ordinateur a été inventé un langage qui permet de parler à son ordinateur de façon un peu plus intelligible, c'est le langage assembleur. C'est le premier langage de programmation créé, permettant de faire faire des actions à son ordinateur. Mais c'est un langage très simple, genre très très simple : addition soustraction multiplication division, des conditions et la possibilité de copier une adresse mémoire a une autre (je parle bien d'adresse mémoire, pas de fichier, genre l'adresse mémoire 77c33e83). Difficile d'imaginer une infrastructure standard d'entreprise d'aujourd'hui avec un langage aussi complexe. De plus chaque architecture de processeur a son propre assembleur, donc impossible d'écrire un code 1 fois et de l'exécuter partout.
 
-Pour créer des logiciels un peu plus complexes, on a donc créé un langage de plus haut niveau, autrement dit qui se rapproche d'un cran vers l'interaction humaine naturelle et s'éloigne d'un cran du langage binaire de l'ordinateur : le [[C]]. Ce fût une véritable révolution qui a même permis d'envoyer des fusées dans l'espace (et causé le crash d'une autre en passant : [Ariane 5](https://fr.wikipedia.org/wiki/Vol_501_d%27Ariane_5). Un langage de plus haut niveau dit aussi plus 'abstrait' (sous-entendu : par rapport au langage binaire de la machine) a un avantage majeur : on peut produire le même résultat que le langage de plus bas niveau avec moins de ligne de code car une fonction du langage de haut niveau correspond en réalité à un ensemble prédéfini de fonctions de plus bas niveau organisé pour réaliser une action spécifique. Une autre vision de ce même avantage est qu'on peut coder des logiciels plus compliqués avec autant de lignes de codes qu'avant.
+Pour créer des logiciels un peu plus complexes, on a donc créé un langage de plus haut niveau, autrement dit qui se rapproche d'un cran vers l'interaction humaine naturelle et s'éloigne d'un cran du langage binaire de l'ordinateur : le C. Ce fût une véritable révolution qui a même permis d'envoyer des fusées dans l'espace (et causé le crash d'une autre en passant : [Ariane 5](https://fr.wikipedia.org/wiki/Vol_501_d%27Ariane_5). Un langage de plus haut niveau dit aussi plus 'abstrait' (sous-entendu : par rapport au langage binaire de la machine) a un avantage majeur : on peut produire le même résultat que le langage de plus bas niveau avec moins de ligne de code car une fonction du langage de haut niveau correspond en réalité à un ensemble prédéfini de fonctions de plus bas niveau organisé pour réaliser une action spécifique. Une autre vision de ce même avantage est qu'on peut coder des logiciels plus compliqués avec autant de lignes de codes qu'avant.
 Si le C fût une révolution, il reste compliqué à coder : le développeur doit gérer lui-même la mémoire utilisée par le programme. Si le développeur lance 3 fois le script et chaque fois le script bloque de la mémoire sans la libérer par la suite, la mémoire de l'ordinateur reste bloquée à jamais et est perdue (ce problème est corrigé par les logiciels modernes, vous pouvez donc essayer le C sans craindre pour votre mémoire). On a donc besoin de langage de plus haut niveau encore pour avoir moins de galère de code et se consacrer à créer des logiciels géniaux plutôt qu'à gérer la mémoire.
 
-On a donc créer un langage d'un cran d'abstraction supplémentaire : le [[Python]] (le CPython plus précisément, pour les experts du fond qui vont me chauffer les oreilles sinon). Le langage python a des avantages indéniables : gestion de la mémoire par l'ordinateur et pas par le développeur, et un langage qui permet en très peu de lignes de codes de faire des choses vraiment géniale (34 lignes de code pour un logiciel 100% local de discussion avec un modèle d'IA si on prend cet exemple [GitHub](https://github.com/ChingWeiChan/ollama-streamlit-demo/blob/main/main.py).
+On a donc créer un langage d'un cran d'abstraction supplémentaire : le Python (le CPython plus précisément, pour les experts du fond qui vont me chauffer les oreilles sinon). Le langage python a des avantages indéniables : gestion de la mémoire par l'ordinateur et pas par le développeur, et un langage qui permet en très peu de lignes de codes de faire des choses vraiment géniale (34 lignes de code pour un logiciel 100% local de discussion avec un modèle d'IA si on prend cet exemple [GitHub](https://github.com/ChingWeiChan/ollama-streamlit-demo/blob/main/main.py).
 
-Récemment est arrivé non pas un nouveau langage, mais carrément une nouvelle approche du codage : le [[Vibe coding]]. Ici, le cran franchi est différent des précédents : le cran d'abstraction n'est pas franchi en organisant un ensemble de fonctions du langage précédent dans un but précis en une fonction du nouveau langage, le cran d'abstraction est franchi en passant le fait d'écrire le code à une IA, on abstrait carrément l'écriture du code. Ce cran franchi donne une force énorme au développeur : accélérer énormément le développement du logiciel. Mais cette approche ouvre aussi des soucis : elle donne la possibilité à n'importe qui de créer un logiciel même à des non programmeurs sans notion de gestion de logiciel, de suivi de version, de mise en production ou de portabilité.
+Récemment est arrivé non pas un nouveau langage, mais carrément une nouvelle approche du codage : le Vibe coding. Ici, le cran franchi est différent des précédents : le cran d'abstraction n'est pas franchi en organisant un ensemble de fonctions du langage précédent dans un but précis en une fonction du nouveau langage, le cran d'abstraction est franchi en passant le fait d'écrire le code à une IA, on abstrait carrément l'écriture du code. Ce cran franchi donne une force énorme au développeur : accélérer énormément le développement du logiciel. Mais cette approche ouvre aussi des soucis : elle donne la possibilité à n'importe qui de créer un logiciel même à des non programmeurs sans notion de gestion de logiciel, de suivi de version, de mise en production ou de portabilité.
 
-**Vibe Coding ou développeur augmenté**
+## Vibe Coding ou développeur augmenté
 Utiliser l'IA pour coder, tout le monde le fait, du développeur en herbe au développeur chevronné. Quelle est la différence entre le développeur 2025 (quelque soit son niveau) qui utilise l'IA dans son travail et le vibe codeur ?
 Le vibe codeur interagit avec l'IA mais ne relit pas tout à pas du tout le code généré par le modèle : il délègue les tâches sans supervision. Le développeur 2025 utilise l'IA pour accélérer le développement logiciel, mais supervise les sorties du modèle : structuration de l'application, codes générés, portabilité et stabilité de l'application. La différence tient donc en la notion clé : le degré de supervision du modèle.
 
-L'IA n'est pas le codeur génial et sans faille qu'on souhaiterait et fait des erreurs : fuite de mauvaise, [[Slotsquatting]] (hallucination de packages ou de fonctions), attaque nichée (intégration dans le code d'une ligne facilitant un hacking, causé par un apprentissage du modèle ou un prompt système malveillant). Comme nous supervisons les sorties  des modèles pour éviter des fake news ou des images immorales, nous devons superviser le code informatique généré. 
+L'IA n'est pas le codeur génial et sans faille qu'on souhaiterait et fait des erreurs : fuite de mauvaise, Slotsquatting (hallucination de packages ou de fonctions), attaque nichée (intégration dans le code d'une ligne facilitant un hacking, causé par un apprentissage du modèle ou un prompt système malveillant). Comme nous supervisons les sorties  des modèles pour éviter des fake news ou des images immorales, nous devons superviser le code informatique généré. 
 
-**L'échelle de l'abstraction**
+## L'échelle de l'abstraction
 A chaque échelon d'abstraction, nous gagnons en vitesse mais nous perdons en contrôle de la machine. Aucun échelon n'est foncièrement bon ou foncièrement mauvais, c'est à chaque développeur de choisir l'échelon qu'il veut utiliser. le vibe coding peut avoir un impact négatif fort s'il n'est pas bien réalisé : pondre du code c'est important mais ça fait pas tout loin de là. Ce code, il faut ensuite le placer dans la bonne architecture, en assurer la pérennité et le versionning. Le développeur doit s'assurer de l'ensemble de ces éléments que l'IA ne maitrise pas, ce qui ne l'empêche pas d'utiliser l'IA pour accélérer ses développements.
 
 

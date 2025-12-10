@@ -1,29 +1,3 @@
----
-Start_date: 2025-07-04
-End_date: 
-tags:
-  - projet/format/article
-  - projet/plateforme/substack
-Status: 
-notes liées: 
----
-**Idée générale (1-2 phrases)** : 
-- Décrire ce qu'est la blockchain -> différencier blockchain de cryptomonnaie et comprendre la technologie
-- 2 cas d'usage santé : 
-	- publication de documents officiels (gouvernement ou authorités)
-	- production pharmaceutique : 
-		- industriel : assure la traçabilité e la communicabilité
-		- autorités et grand public : traçabilité et confiance
-
-**Angle/accroche** : Quels projets de la blockchain en santé, et quel devenir ?
-- Proposer synthèse mode projet pour les gens qui serait intéressé par l'idée 
-
-**Braindump** : 
-- [[Blockchain - Feynman]]
-	- Inviolabilité -> mise à disposition d'informations insaltifiables
-	- selon les choix techiques, transparence : idéal pour la production pharmaceutique, traça chaine de production
-
----
 # La blockchain en santé
 *Quelle place pour la blockchain dans notre système de soin actuel ?*
 
@@ -32,7 +6,7 @@ Mais au-delà du monde financier et notamment dans la santé, difficile de citer
 
 La technologie étaient pleines de promesse lors de son explosion en 2010, qu'en est-il aujourd'hui, et notamment dans le domaine de la santé ?
 
-### Différencier la blockchain de la crypto-monnaie
+## Différencier la blockchain de la crypto-monnaie
 Quand quelqu'un dit blockchain, on pense tout de suite au Bitcoin, comme si c'est deux mots se valaient. Pourtant la différence est de taille.
 
 La blockchain est une technologie de stockage d'informations. Les caractéristiques principales de la blockchain sont : 
@@ -48,16 +22,16 @@ Le bitcoin est une monnaie tout comme l'euro ou le dollar, mais dont la généra
 *La blockchain est juste une base de données en fait ?* 
 Oui, la blockchain finalement c'est une énorme base de données. Pour le Bitcoin, la base de données fait environ 700 Go à ce jour, et l'"information" stockée est les échanges réalisés entre les participants.
 
-D'autres crypto-monnaies stockent par exemple des échanges de monnaies mais aussi des images (c'est ce qu'on appelle les [[Non fungible token]] ou NFT).
+D'autres crypto-monnaies stockent par exemple des échanges de monnaies mais aussi des images (c'est ce qu'on appelle les Non fungible token ou NFT).
 Cette utilisation de la blockchain est très intéressante car elle ouvre des opportunités inédites pour partager sans risque de falsification des documents ! 
 
-### Quelle place de la blockchain en santé ?
+## Quelle place de la blockchain en santé ?
 
 En santé, une utilisation intelligente de la blockchain pourrait donner lieu à plusieurs avantages : 
 - Confidentialité : la blockchain pourrait permettre que le patient choisisse qui a accès à son dossier médical, 
 - Traçabilité : suivre les personnes ayant accédé au dossier médical d'un patient, tracer les lots et les actions de production de médicaments.
 
-#### La blockchain pour la production pharmaceutique
+### La blockchain pour la production pharmaceutique
 La production de médicament recèle plusieurs challenges : 
 - tracer les lots de produits et les actions réalisées, pour remonter la chaine de production en cas de problème,
 - assurer la communicabilité de la traçabilité réalisée, pour pouvoir prouver que les actions menées sont les bonnes (si un fournisseur annonce un problème de lot, alors l'industriel doit prouver qu'il a mené les actions adéquates aux autorités et au public, au risque d'être attaqué en justice).
@@ -73,7 +47,7 @@ La blockchain revête un avantage majeur : l'inviolabilité des données. Une fo
 Chaque entreprise productrice de médicament met en place une blockchain dédiée, dans laquelle elle enregistre et les lots de produits utilisées et les actons réalisées.
 Grâce à cette blockchain, l'industriel comme le public peut tracer de façon détaillée la création du médicament. La blockchain ne peut être nourrie que par l'industriel, et est ouverte en consultation au grand public.
 
-#### La blockchain pour la publication de document officiels
+### La blockchain pour la publication de document officiels
 
 Dans la droite ligne de l'exemple précédent, une application très similaire peut être réalisée pour la publication de documents officiels (pas forcément dans le monde de la santé d'ailleurs).
 
@@ -89,7 +63,7 @@ L'utilisateur aurait alors un logiciel pour suivre le ou les blockchains qu'il s
 
 Ce 2e exemple se rapproche de l'idée des flux RSS. L'idée du flux RSS est géniale : assurer une information directement du publieur au lecteur de façon asynchrone. Cet exemple comprend exactement cette idée, et la complète par l'inviolabilité des informations permise par la blockchain.
 
-#### La blockchain pour l'accès au dossier des patients 
+### La blockchain pour l'accès au dossier des patients 
 
 Les données de santé sont une denrée de plus en plus convoitées. Les recherches cliniques et sur données secondaires sont de plus en plus nombreuses, avec des budgets à la clé pour les entreprises intéressants.
 
@@ -97,17 +71,17 @@ Une question se pose donc : comment mettre à disposition des professionnels de 
 
 La blockchain peut répondre à cette problématique. En stockant sur la blockchain les données médicales, les choix du patient quant à quelle donnée est accessible à qui, et quelle personne a accédé aux informations de quelle personne, le patient pourra choisir à qui il donne accès à ses informations, puis l'accès ne serait ouvert qu'aux personnes habilités, avec une traçabilité des accès pour vérifier que le dossier n'est pas consulté à outrance par des professionnels de santé par exemple (cas des fuites de données de personnalités connus). 
 
-### Les inconvénients de la blockchain
+## Les inconvénients de la blockchain
 
 La taille du bitcoin tourne à ce jour autour autour de 700 Go, et par design ne peut que progresser. Dans le cadre du bitcoin, un nouveau bloc est intégré en moyenne toutes les 10 minutes, pour une taille moyenne entre 1 et 2 Mo. Dans le cas d'une blockchain de dossiers médicaux, la taille des blocs seraient beaucoup plus importantes, même en imaginant une durée entre les blocs beaucoup plus importante, la taille totale de la blockchain sera vite très importante avec une taille de bloc toujours croissante avec le vieillissement de la population. Comme chaque utilisateur de la blockchain doit héberger l'ensemble de la blockchain, la taille totale de mémoire utilisée pour la blockchain tout node confondu serait colossale.
 Une autre problématique très liée est le modèle économique de cette blockchain. Comment inciter les personnes (morales ou physiques) qui auront la charge d'implémenter les dossiers dans la blockchain à le faire ? Dans le cas du bitcoin, cette incitation est réalisée de la façon suivante : lorsqu'une personne réalise une transaction en bitcoin, cette personne définit un second montant qui rétribuera le node gagnant de la mise en concurrence. Ainsi les gens ont intérêt à participer à cette mise en concurrence car ils peuvent gagner de l'argent. Dans le cas de la blockchain pour les dossiers médicaux, une solution serait de verser un montant pour chaque nouveau noeud créé, au même titre qu'un remboursement d'acte. 
 
 La blockchain pose aussi un problème écologique : cette dernière nécessite de grandes quantités d'énergie pour refroidir les serveurs qui stockent la chaine et concourent pour un nouveau bloc. 
 
-### Conclusion 
+## Conclusion 
 Si les cryptomonnaies vous intéresse à titre de curiosité, je vous recommande le site Coin base *(je n'ai aucune affiliation et ne gagne pas 1 centime à vous en parler, je trouve juste le site bien fait)*. C'est un site qui vend une solution pour investir dans les cryptomonnaies si j'ai bien compris, mais il propose surtout beaucoup de pages explicatives sur la blockchain et son fonctionnement et le Bitcoin. C'est un bon point de départ sur le sujet.
-Si les cours des cryptos vous intéresse, je vous suggère mon [[Votre premier voyage de classe au pays du CLI - blog]], vous apprendrez comme consulter les cours des crypto-monnaie et du bitcoin depuis votre ordinateur sans rien installer, et vous apprendrez aussi a connaître un peu mieux votre CLI, vous allez adorer 🙂 Pour investir, comptez pas sur moi je m'y suis pas encore mis, a vous de tracer votre chemin.
+Si les cours des cryptos vous intéresse, je vous suggère mon Votre premier voyage de classe au pays du CLI, vous apprendrez comme consulter les cours des crypto-monnaie et du bitcoin depuis votre ordinateur sans rien installer, et vous apprendrez aussi a connaître un peu mieux votre CLI, vous allez adorer 🙂 Pour investir, comptez pas sur moi je m'y suis pas encore mis, a vous de tracer votre chemin.
 
-Mise en place intelligemment, la blockchain pourrait permettre de répondre à plusieurs soucis de notre système de santé. Trois cas d'usages se dessinent un peu plus distinctement que les autres, et seraient de bons points de départ pour implémenter cette belle technologie qu'est la blockchain dans l'univers de la santé. Mais une implémentation pleinement pérenne nécessite de résoudre certains problèmes : la consommation électrique de la technologie, quoique déjà en cours de résolution avec les recherches sur [[La fusion nucléaire]] (j'ai fait un article à ce sujet, je parle justement de ce point bien spécifique !) et l'impact environnemental.
+Mise en place intelligemment, la blockchain pourrait permettre de répondre à plusieurs soucis de notre système de santé. Trois cas d'usages se dessinent un peu plus distinctement que les autres, et seraient de bons points de départ pour implémenter cette belle technologie qu'est la blockchain dans l'univers de la santé. Mais une implémentation pleinement pérenne nécessite de résoudre certains problèmes : la consommation électrique de la technologie, quoique déjà en cours de résolution avec les recherches sur La fusion nucléaire (j'ai fait un article à ce sujet, je parle justement de ce point bien spécifique !) et l'impact environnemental.
 
 

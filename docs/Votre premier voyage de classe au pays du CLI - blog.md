@@ -1,15 +1,5 @@
----
-Start_date: 
-End_date: 2025-06-25
-tags:
-  - projet/format/article
-  - projet/plateforme/substack
-Status: 
-notes liées: 
----
-
-## Votre premier voyage de classe au pays du CLI - blog
-A la découverte du CLI #2
+# Votre premier voyage de classe au pays du CLI - blog
+*A la découverte du CLI #2*
 
 Vous avez sûrement déjà entendu parler du terminal d'un ordinateur, mais si vous savez cette petite fenêtre noire moche que tous les hackers utilisent dans les films ? Le terminal et par extension le CLI *(command line interface)* a super mauvaise presse, et pourtant c'est un endroit génial avec pleins de belles choses à découvrir, presque un nouveau pays avec ses us et coutumes, ses traditions. 
 Pour vous accoutumer à ce superbe pays, je vous propose donc de partir avec moi en voyage de classe dans ce fabuleux pays !
@@ -29,7 +19,7 @@ En tant que guide, ma première tâche est de vous apprendre à trouver un autoc
 - la standard : cherchez dans vos applications *cmd* et ouvrez là (pour les fans de raccourcis clavier : Win + Q pour ouvrir une zone de recherche d'applications)
 Une petite fenêtre a écriture blanche sur fond noir avec une barre verticale qui clignote vient de s'ouvrir et vous regarde fixement ? Promis c'est pas un animal sauvage, c'est un autochtone ! Vous avez trouvé un autochtone, c'est une première réussite non négligeable de votre voyage, bravo fier explorateur ! 
 
-Courte histoire de cet autochtone, pour la raconter au copain quand vous rentrerez : le CMD, de son nom complet local *command* et de nom français *interpréteur de commande*, est le [[Shell]] de [[Windows]]. Avant l'arrivée des interfaces graphiques des ordinateurs, du temps des dinosaures préhistoriques (j'exagère, c'était les années 1970), les utilisateurs des ordinateurs utilisaient principalement le clavier pour interagir avec l'ordinateur : ils écrivaient une commande puis l'envoyaient à l'ordinateur qui exécutait la commande. Un peu comme aujourd'hui on double clique sur une application pour l'ouvrir, à l'époque on tapait le nom du logiciel puis l'ordinateur l'ouvrait. On faisait à peu près la même chose, mais au clavier ! C'est ça le CLI, c'est l'interaction avec l'ordinateur via des commandes qu'on envoie, qu'on oppose au GUI (Graphique User Interface) qui sont nos interfaces jolies et colorés qu'on connait.
+Courte histoire de cet autochtone, pour la raconter au copain quand vous rentrerez : le CMD, de son nom complet local *command* et de nom français *interpréteur de commande*, est le Shell de Windows. Avant l'arrivée des interfaces graphiques des ordinateurs, du temps des dinosaures préhistoriques (j'exagère, c'était les années 1970), les utilisateurs des ordinateurs utilisaient principalement le clavier pour interagir avec l'ordinateur : ils écrivaient une commande puis l'envoyaient à l'ordinateur qui exécutait la commande. Un peu comme aujourd'hui on double clique sur une application pour l'ouvrir, à l'époque on tapait le nom du logiciel puis l'ordinateur l'ouvrait. On faisait à peu près la même chose, mais au clavier ! C'est ça le CLI, c'est l'interaction avec l'ordinateur via des commandes qu'on envoie, qu'on oppose au GUI (Graphique User Interface) qui sont nos interfaces jolies et colorés qu'on connait.
 Le CLI demeure encore aujourd'hui essentiel à bien des égard ! La gestion de serveur à distance par exemple : installer un GUI sur un serveur, ça prend de la mémoire et du processeur inutilement, donc on utilise le CLI pour interagir avec le serveur en laissant un maximum de mémoire et de processeur pour l'usage *serveur*. Pour les développeurs, le CLI permet de créer des scripts pour réaliser un ensemble de commandes d'un coup qui demanderait en GUI de faire plusieurs clics à différents endroits, c'est un gros gain d'automatisation.
 
 ## Le premier contact 👽

@@ -1,30 +1,13 @@
-How to develop your image as a developer or data worker with a quality portfolio
+# Full guide to Build a professionna lportfolio with GitHub Pages
+*How to develop your image as a developer or data worker with a quality portfolio*
 
-# Index
-
-1. My previous portfolio
-2. The adventure begins
-3. The code  
-    3.1. Software needed  
-    3.2. Configure the local environment  
-    3.3. Create the working folder  
-    3.4. Prepare Git  
-    3.5. Feed the website  
-    3.6. Website configuration  
-    3.7. Final _mkdocs.yml_ file  
-    3.8. Final file structure  
-    3.9. Deploy the work
-4. GitHub Pages configuration
-5. Iterative improvements
-6. My final 2024-edition portfolio!
-
-# My previous portfolio
+## My previous portfolio
 
 In 2023, I’d been coding for data projects for 2 years and was looking to create my first portfolio to present my data science projects. I discovered [Matt Chapman’s TDS article](https://towardsdatascience.com/the-portfolio-that-got-me-a-data-scientist-job-513cc821bfe4) and [Matt Chapman’s portfolio](https://mattschapman.github.io/). This article corresponded perfectly to my technical knowledge at the time (Python, Git). Thanks to Matt Chapman’s article, I begun my first portfolio! So I decided to explore this solution and figure out how to go about it. I discovered [the reference that Matt Chapman used](https://medium.com/@evanca/set-up-your-portfolio-website-in-less-than-10-minutes-with-github-pages-d0efa8ff56fd) and the [corresponding repository](https://github.com/evanca/quick-portfolio). I used this reference to create my portfolio.
 
 In 2024, I found my old portfolio old-fashioned compared to existing portfolios, and not very attractive to data enthusiasts or recruiters. Exploring the projects already carried out in the community, I found several projects with superb documentation. Here are 2 links that inspired me: [Multi pages documentation based on GitHub Pages](https://github.com/aphp/edsnlp), and [JavaScript portfolio based on GitHub Pages](https://github.com/KeeganFernandesWork/KeeganFernandesDataScience) and [corresponding Medium article](https://keeganfdes03.medium.com/making-a-data-science-portfolio-using-github-pages-for-free-ee831d4dec68).
 
-# The adventure begins
+## The adventure begins
 
 For this new edition of my portfolio, my criteria were: a free solution, with minimal configuration. Looking through existing documentations and portfolios, I had several options:
 
@@ -40,17 +23,17 @@ As I don’t code in JavaScript, I would have been quickly limited in my customi
 
 Mkdocs-material allows the use of Google Tags, perfect for tracking traffic on my portfolio!
 
-# The code
+## The code
 
 At the time of this project, I had already set up my GitHub Pages, created my repository and created the virtual environment for my previous portfolio. To enable everyone to follow and reproduce this article, I’ve decided to start from scratch. For those of you who already have a GitHub Pages portfolio, you’re already familiar with Git and Python and will be able to hang on to the branches without any worries.
 
 In this article, I’ll be sharing some URL links. My aim is to give you a good understanding of every aspect of the code and, if necessary, to provide you with resources to go into more detail on a subject or solve an error that I haven’t described in my article.
 
-## Software needed
+### Software needed
 
 For this work, you will need at least Python and Git installed and configured on your computer, and a GitHub account. Personally, I work on VSCode and [Miniconda integrated into PowerShell](https://stackoverflow.com/questions/64149680/how-can-i-activate-a-conda-environment-from-powershell) so that I can have my scripts and terminal on the same screen. To configure Git, I refer you to the *Your identity* part of the page on the [Git site](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup).
 
-## Configure the local environment
+### Configure the local environment
 
 I work with [Miniconda](https://docs.anaconda.com/miniconda/). If you work with the same tool, you will recognize the *‘(base)>’* elements. If not, this element represent the current virtual python environment (base is the default virtual environment of Miniconda). The element `working_folder` is the the terminal’s current folder.
 
@@ -72,7 +55,7 @@ I work with [Miniconda](https://docs.anaconda.com/miniconda/). If you work with
 (portfolio_env)> conda list > "requirements.txt" # Export packages installed only
 ``` 
 
-## Create the working folder
+### Create the working folder
 
 My previous portfolio didn’t use mkdocs, so I create the mkdocs structure:
 
@@ -93,7 +76,7 @@ Replace *\<your GitHub username>* by your GitHub username. For the rest of thi
 
 To understand the mkdocs package, you will find the documentation [here](https://www.mkdocs.org/).
 
-## Prepare Git
+### Prepare Git
 
 If you already have a GitHub Pages, you can clone your *\<your GitHub username>.github.io* repository and skip this part. The step part is to create the local Git repository.
 
@@ -129,7 +112,7 @@ The working folder will have the following architecture:
     |- index.md
 ```
 
-## Feed the website
+### Feed the website
 
 Mkdocs allows you to display website and dynamically include modifications, so you can see your site evolve over time. The code to dynamically generate the site:
 
@@ -192,7 +175,7 @@ Then I add each project’s presentation in the nav bar with the following synta
 
 The indentation here is very important: it’s define folders of the navigation bar. Not all files in the docs folder need to be listed in the navigation bar. However, if they are not listed, they will not be directly accessible to the visitor.
 
-## Website configuration
+### Website configuration
 
 Then I configure invisible but very important aspects of my website:
 
@@ -305,7 +288,7 @@ petoulemonde.github.io
     |- … others projects …
 ```
 
-## Deploy the work
+### Deploy the work
 
 Mkdocs allows to generate the code for the website in 1 command line:
 
@@ -320,7 +303,7 @@ working_folder> git add .
 working_folder> git commit -m "Create website"  
 working_folder> git push github master
 
-# The GitHub Pages configuration
+## The GitHub Pages configuration
 
 To set up a GitHub Pages, the steps are:
 
@@ -336,7 +319,7 @@ In the top menu, click on ‘_Actions_’. You should see a ‘workflow run’. 
 
 You can see you website on *https://\<your GitHub username>.github.io*.
 
-# Iterative improvements
+## Iterative improvements
 
 The more I look at my portfolio to check and present it, the more errors I notice. To correct them, nothing could be simpler:
 
@@ -347,7 +330,7 @@ The more I look at my portfolio to check and present it, the more errors I notic
 
 And the magic happens: GitHub automatically makes the modification (look at the ‘_Actions_’ tab to see where GitHub is at).
 
-# My final 2024-edition portfolio!
+## My final 2024-edition portfolio!
 
 You’ll find my edition 2024 portfolio [here](https://petoulemonde.github.io/) and the GitHub repository [here](https://github.com/petoulemonde.github.io). In the future, I’d like to integrate JavaScript to make the portfolio more dynamic.
 

@@ -1,18 +1,7 @@
-Title : The Power of Pandas Plots: Backends
+# The Power of Pandas Plots: Backends
+*Create interactive graphics from Pandas effortlessly*
 
-Sous-titre : Create interactive graphics from Pandas effortlessly
-
-## Index
-
-1. Context
-2. Backends  
-    2.1. Matplotlib  
-    2.2. Plotly  
-    2.3. Hvplot
-3. Discussion
-4. A word before you go
-
-# 1. Context
+## Context
 
 Python has a multitude of visualization packages, the three best known of which are: [Matplotlib](https://matplotlib.org/) (and seaborn), [Plotly](https://plotly.com/), and [Hvplot](https://hvplot.holoviz.org/). Each of these 3 packages has its strengths, but requires an entry cost to pay to learn how to use this package, sometimes quite substantial.
 
@@ -20,7 +9,7 @@ The idea for this article came to me when I discovered the [Mind Map of Pandas 
 
 Pandas is at the heart of data science in Python, and we all know how to use it. But Matplotlib integrated into Pandas is aging, and is being overtaken both in ease of use and in presentation by other packages. The power of the Pandas visualization backend allows you to take advantage of the latest visualization packages for data exploration and result rendering, without having to invest time in learning these packages, which are nevertheless super powerful!
 
-# 2. Backends
+## Backends
 
 Pandas was built on 2 packages, Numpy and Matplotlib. This explains why we use Matplotlib scripts to generate graphs, and therefore the generated graphs are matplotlib graphs.
 
@@ -85,7 +74,7 @@ df = pd.DataFrame(data, columns=['x', 'y'])
 df.plot(kind='scatter', x='x', y='y') # Plotting
 ```
 
-## **2.1. Matplotlib**
+### Matplotlib
 
 [Matplotlib](https://matplotlib.org/) is the default visualization backend of Pandas. In other words, if you don’t specify a backend, Matplotlib will be used. It is an efficient package to quickly visualize your data to explore it or extract results, but it is aging and is being caught up in both ease of use and rendering power by other packages.
 
@@ -105,7 +94,7 @@ As a reminder, here are the 11 Matplotlib display methods integrated into Pandas
 - “pie” for pie charts,
 - “scatter” for scatter plots.
 
-## 2.2. Plotly
+### Plotly
 
 [Plotly](https://plotly.com/) is a visualization package developed by the company Plotly. The company has developed the framework Plotly.js, to allow interactive visualization of data within Python. The company Plotly also offers the Python dashboarding package [Dash](https://dash.plotly.com/.
 
@@ -134,7 +123,7 @@ px.scatter(x=df["sepal.length"], y = df["sepal.width"])
 The advantage is that you can directly integrate a graphic created in Pandas into the Plotly universe, especially Dash!  
 One limitation is that Plotly’s integration with Pandas is not yet perfect as detailed on the Plotly website ([details on the Plotly website](https://plotly.com/python/pandas-backend/)).
 
-## 2.3. Hvplot
+### Hvplot
 
 [Hvplot](https://hvplot.holoviz.org/) is an interactive visualization package based on bokeh.  
 It is an exciting package, which I discovered some time ago and which continues to fascinate me, as much for Hvplot which integrates the notion of backend as in Pandas as for the [Holoviz suite](https://holoviz.org/) and related packages like [Panel](https://panel.holoviz.org/) to create dynamic client-side websites.
@@ -183,7 +172,7 @@ df.hvplot.scatter(backend = "hvplot", x = "sepal.length", y = "sepal.width")
 
 Hvplot is part of the extremely powerful Holoviz suite with many other associated tools to push data analysis very far, i.e. tools like [Panel](https://panel.holoviz.org/), [geoviews](https://geoviews.org/), [datashader](https://datashader.org/) and others. This type of concordance allows to create graphs from pandas and still be able to take advantage of the Holoviz suite.
 
-# 3. Conclusion
+## Conclusion
 
 Pandas backends are an extremely efficient solution to discover and take advantage of the latest Python visualization packages without having to invest time: in 18 characters including spaces, it is possible to locally transform a standard matplotlib graph into an interactive Plotly graph, and therefore to take advantage of all the benefits of this type of visualization.
 
@@ -191,7 +180,7 @@ However, this solution has certain limitations: it is not suited to highly advan
 
 Hvplot is currently my favorite package for visualization: it is extremely easy to get started with at first, works with all the major data manipulation packages (Polars, Dask, Xray, …) and is part of a continuum of applications that allows you to go from graphs to dynamic full client-side websites.
 
-# 4. A word before you go
+## A word before you go
 
 During my research, I didn’t find as much documentation as I expected. I think the concept is great, so I expected a lot of articles. So feel free to tell me in the comments if you find this solution really useful, or if it’s just a cool thing with no real use.
 

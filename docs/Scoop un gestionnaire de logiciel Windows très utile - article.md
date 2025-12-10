@@ -1,30 +1,18 @@
----
-Start_date: 2025-04-22
-End_date: 2025-05-07
-tags:
-  - projet/format/article
-  - projet/etat/done
-  - projet/plateforme/sybstack
-notes liées: "[[Scoop]]"
----
-**Objectif initial** : 
-**Critères de réussites du projets** : 
-**Points d'incertitude** : 
-
-## Scoop : un gestionnaire de logiciel Windows très utile !
+# Scoop : un gestionnaire de logiciel Windows très utile !
 *Qu'est-ce qu'un gestionnaire de package, et pourquoi nous devrions tous utiliser un gestionnaire de package ?*
+date: 07/05/2025
 
 *Note : Cette article traite de l'importance d'avoir un gestionnaire de package et des avantages d'en avoir un. Scoop est un gestionnaire de package Windows. Sur Linux, les gestionnaires de package sont intégrés aux distros, donc lisez l'article pour les idées et demandez à Google quel est le gestionnaire de package de votre distro si vous ne l'avez pas encore identifié (même si je doute que vous soyez sous Linux et que vous n'utilisiez pas déjà votre gestionnaire de package 😉). Pour Mac, LE gestionnaire de package est brew, et les arguments généraux pour installer et utiliser brew reste exactement les mêmes que pour Scoop (les 2 solutions varieront évidement quant aux fonctionnalités spécifiques).*
 
 *Disclaimer : je n'ai aucune sponsorisation pour cet article, par aucun des logiciels cités ni aucune autre personne commerciale, morale ou physique.*
 
-**Pourquoi un gestionnaire de package ?**
-Windows a un énorme défaut : mettre à jour les logiciels est super galère. Soit il faut un logiciel tierce mais dont l'efficacité n'est pas toujours évidente, soit on a de la chance et on peut mettre à jour via le Store, soit il faut carrément re-télécharger et ré-installer le logiciel sans être sûr qu'il n'y aura pas de conflits, de doublon d'installation ou de nettoyage de l'ancienne version par la nouvelle. Tout ceci cause un problème majeur : la sécurité du poste de travail ! La mise à jour des logiciels est d'ailleurs un pilier fondamentale de l'[[Hygiène digitale]].  
+## Pourquoi un gestionnaire de package ?
+Windows a un énorme défaut : mettre à jour les logiciels est super galère. Soit il faut un logiciel tierce mais dont l'efficacité n'est pas toujours évidente, soit on a de la chance et on peut mettre à jour via le Store, soit il faut carrément re-télécharger et ré-installer le logiciel sans être sûr qu'il n'y aura pas de conflits, de doublon d'installation ou de nettoyage de l'ancienne version par la nouvelle. Tout ceci cause un problème majeur : la sécurité du poste de travail ! La mise à jour des logiciels est d'ailleurs un pilier fondamentale de l'Hygiène digitale.  
 Exemple : l'attaque Wannacry de 2017, qui avait paralyser le monde entier alors que Microsoft avait publié le correctif, mais les gens ne l'installait pas (pour en apprendre plus sur cette histoire : [Wikipédia](https://fr.wikipedia.org/wiki/WannaCry) ou la super [vidéo](https://www.youtube.com/watch?v=1qNHnUyBzXU) de overflOw).
 
 Pourtant, une autre solution existe, une solution gratuite pour les particuliers qui permet d'installer, de mettre à jour et de désinstaller des logiciels rapidement et facilement, ce sont les gestionnaires packages Windows !
 
-**Scoop : LE gestionnaire de package Windows**
+## Scoop : LE gestionnaire de package Windows
 Plusieurs gestionnaires de packages sont disponibles sur internet, et disposent chacun de leurs spécificités propres. Certains petits projets existent tel que [RuckZuck](https://ruckzuck.tools/), [Windows Remix](https://www.windowsremix.com/), [WSCC](https://www.kls-soft.com/wscc/), [QuickInstaller](https://www.quickinstaller.net/). Ces projets ne sont quasiment jamais cité dans les articles web, et donc moins connu donc que les 4 solutions ci-dessous. 
 
 Je vous présente ici les 4 plus courants et plus répandus : 
@@ -60,7 +48,7 @@ NB : je parle souvent du CLI. J'ai prévu d'en faire une série d'articles, pour
 
 Pour linux : si vous utilisez linux, vous connaissez déjà très probablement le concept de Scoop et utilisez la gestionnaire de packages de votre distro. Pour Mac : alternative Scoop = [brew](https://brew.sh/).
 
-**Comment j'utilise Scoop ?**
+## Comment j'utilise Scoop ?
 Avec Scoop, j'ai installé :
 - Brave : navigateur l'un des plus respectueux de notre vie privé ([petite vidéo](https://www.youtube.com/watch?v=5ImSqgvg9UU) pour les plus curieux)
 - 7zip : LE 7zip que tout le monde a, mais en version portable et appelable depuis le CLI
@@ -72,12 +60,12 @@ Quand j'oublie mes logiciels installés : `scoop list`. Quand j'oublie les comma
 
 Grâce à Scoop, je peux appeler mes logiciels depuis PowerShell (exemple : `brave` -> lance brave, `7zip`), mon bureau et ma barre inférieures sont donc beaucoup plus épuré sans perte d'efficacité, je mets maintenant juste une icône vers PowerShell. 
 
-**Comment fonctionne Scoop ?**
+## Comment fonctionne Scoop ?
 Scoop est un script que vous installé sur votre ordinateur, doublé d'un repo GitHub entretenu par l'équipe de Scoop qui va lister les logiciel disponibles et les liens vers ces packages. 
 Pour chaque logiciel, Scoop dispose d'un 'manuel' de logiciel : le nom, la version, le lien vers le repo qui stocke l'ensemble des scripts du logiciel, et le lien vers le script pour initier l'installation.
 Vous pouvez retrouvez ces infos par 2 commandes : `scoop info <package>` -> informations du packages, et `scoop home <package>` -> ouvre la page web où sont stockés tous les scripts du logiciel demandé. Grâce à cette dernière commande, vous pouvez donc voir d'où viennent les fichiers du logiciel demandé.
 
 Puis lorsque vous lancez l'installation, scoop télécharge les fichiers du logiciel, crée le dossier du logiciel dans l'arborescence de Scoop, puis lance l'installeur du logiciel (celui décrit dans le manuel). 
 
-**Conclusion**
+## Conclusion
 J'ai rapidement intégré Scoop à mon système pour facilité d'usage qui ne mord en rien sur sa sécurité et sa capacité à rendre au CLI toute son importante. J'espère par mon exposé vous avoir convaincu de l'essayer. Si vous l'avez essayé mais que vous ne souhaitez pas continuer avec Scoop, Scoop ne vous lâche pas et offre une désinstallation toujours aussi élégante qu'à son habitude (`scoop uninstall scoop`). Essayez le, même la désinstallation est super facile !

@@ -1,21 +1,8 @@
----
-Start_date: 
-End_date: 2024-10-04
-tags:
-  - projet/format/article
-  - projet/etat/done
-  - projet/plateforme/medium
-Status: idea
----
-How do you create interactive and client-side GitHub Pages ? The first stone in an ambitious edifice
+# Dynamic GitHb Pages with Panel
+*How do you create interactive and client-side GitHub Pages ? The first stone in an ambitious edifice*
+date: 04/10/2024
 
-Index:
-1. Introduction
-2. Method
-3. Results
-4. Discussion
-
-# 1. Introduction
+## Introduction
 
 For several years now, I’ve been dreaming of having a nice portfolio to showcase my projects as a budding data scientist. After almost 1 year of reflection, trials, failures and a few successes, I created my first portfolio on GitHub Pages. Happy with this personal achievement, I wrote an article about it to share the fruit of my research with the community, available [here](https://towardsdatascience.com/full-guide-to-build-a-professionnal-portfolio-with-python-markdown-git-and-github-page-for-66d12f7859f0).
 
@@ -33,7 +20,7 @@ But what’s the point of having dynamic Github pages? GitHub Pages is a very in
 
 Holoviz is an exciting and extremely rich set of pacakges. It’s a complete visualization and dashboarding solution, powerful on reasonably sized data and big data. This solution supports all major input data manipulation packages (polars, pandas, dask, X-ray, …), and offers high-level syntax for generating interactive visualizations with a minimum of code. This package also allows you to customize the output and, in particular, to choose your visualization back-end such as pandas (I’ve written [an article](https://medium.com/towards-data-science/the-power-of-pandas-plots-backends-6a08d52071d2) about it if you’d like to find out more). To find out more about this great suite of packages, I suggest [this article](https://towardsdatascience.com/3-ways-to-build-a-panel-visualization-dashboard-6e14148f529d).
 
-# 2. Method
+## Method
 
 For this job, my technical background imposes a few contingencies:
 
@@ -190,7 +177,7 @@ To meet my goal of deploying both web and GitHub Pages, I will test the deployme
 - on a local python server, generated using `python -m http.server`,
 - GitHub Pages.
 
-## Visualize the optimal operation that dasbhoard should have
+### Visualize the optimal operation that dasbhoard should have
 
 Before I start testing, I need to have a benchmark of how each application should work in a perfect world. To do this, I use the local emulation function of the :
 
@@ -207,24 +194,24 @@ Here is the expected result:
 
 - The simple app :
 
-![](simple_app.gif)
+![](assets/simple_app.gif)
 Simple app visualization, Image is by the author
 
 - The big app :
 
-![](big_app.gif)
+![](assets/big_app.gif)
 Big app visualization, Image is by the author
 
 - The material dasbhoard :
 
-![](dashboard.gif)
+![](assets/material_dashboard.gif)
 Material dashboard visualization, Image is by the author
 
 These visualizations will enable me to see if everything is running smoothly and within reasonable timescales during my deployment tests.
 
-# Results
+## Results
 
-## First step : transform python script to HTML interactive script
+### First step : transform python script to HTML interactive script
 
 The Panel package transforms a panel application python script into an HTML application in 1 line of code:
 
@@ -243,7 +230,7 @@ In the docs folder (‘ — to docs’ part of the line of code), 2 files with t
 
 If you’re not familiar with WebAssembly, I invite you to devour [Mozilla’s article](https://developer.mozilla.org/en-US/docs/WebAssembly) on the subject. I’ll be doing an article on the history, scope and potential impact of WebAssembly, which I think will be a real game changer in the years to come.
 
-## First test: local web server deployment
+### First test: local web server deployment
 
 1. Emulate the local web server with python: `python -m http.server`. This command will return a local URL for your browser to connect to (URL like: 127.0.0.1:8000).
 
@@ -267,7 +254,7 @@ Test report for deployment on local html server:
 
 After testing each of the 3 applications listed above, this solution works perfectly with all of them, with no loss of speed in loading and using the applications.
 
-## Second test: GitHub Pages deployment
+### Second test: GitHub Pages deployment
 
 In this article, I’ll quickly go over the configuration part of GitHub Pages on GitHub, as I described it in detail in my [previous article](https://towardsdatascience.com/full-guide-to-build-a-professionnal-portfolio-with-python-markdown-git-and-github-page-for-66d12f7859f0).
 
@@ -296,7 +283,7 @@ Explanation:
 
 4. In the repo, enable the creation of a github project page. In the configuration page, here’s how to configure the GitHub page:
 
-![](deploy.webp)
+![](assets/deployment.webp)
 
 Configuration for deployment on GitHub Pages, Image is by the author
 
@@ -310,7 +297,7 @@ Test report: Deployment on GitHub pages:
 
 Concerning solution 2.b. : This is a particularly interesting solution, as it allows us to have a static home page for our website or portfolio, and then distribute it to special dynamic project pages. It opens the door to both static and dynamic GitHub Pages, using mkdocs for the static aspect and its pretty design, and Panel for the interactive pages. I’ll probably do my next article on this mkdocs + Panel (pyodide-worker) deployment solution, and I’ll be delighted to count you among my readers once again.
 
-## Problems encountered
+### Problems encountered
 
 The dashboards tested so far don’t distribute to other pages on the site/portfolio, so the only alternative identified is to create a static home page, which redistributes to dashboards within the site. Is it possible to have a site with several pages without using a static page? The answer is yes, because dasbhaords can themselves integrate links, including links to other dashboards on the same site.
 
@@ -331,13 +318,13 @@ pn.template.MaterialTemplate(
 
 This adds a link to the application’s side bar:
 
-![](link_sidebar.webp)
+![](assets/side_bar.webp)
 
 Material dashboard with link visualization, Image is by the author
 
 While the proof here isn’t pretty, it show that a dashboard can integrate links to other pages, so it’s possible to create a site with several pages using Panel alone — brilliant! In fact, I’m concentrating here on the dasbhoarding part of Panel, but Panel can also be used to create static pages, so without even mastering mkdocs, you can create sites with several pages combining static and dynamic elements.
 
-# Discussion
+## Discussion
 
 Panel is a very interesting and powerful package that lets you create dynamic websites easily and hosted on GitHub Pages, thanks in particular to the magic of WebAssembly. The package really lets you concentrate on creating the dasbhoard, then in just a few lines convert that dasbhoard into web content. Coupled with the ease of use of GitHub Pages, Panel makes it possible to rapidly deploy data dashboards.
 
