@@ -1,0 +1,1647 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Mon livre de coding - Pierre-Etienne Toulemonde">
+      
+      
+      
+        <link rel="canonical" href="https://petoulemonde.github.io/livre_coding/The%20Power%20of%20Pandas%20Plots%20Backends%20-%20article/">
+      
+      
+        <link rel="prev" href="../Votre%20premier%20voyage%20de%20classe%20au%20pays%20du%20CLI%20-%20blog/">
+      
+      
+        <link rel="next" href="../Master%20the%20Python%27s%20documentation%20to%20make%20it%20an%20ally%20-%20article/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../assets/intelligence-artificielle.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Les Pandas plots backends - Livre Coding 🧑‍💻 - Pierre-Etienne</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-power-of-pandas-plots-backends" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Livre Coding 🧑‍💻 - Pierre-Etienne" class="md-header__button md-logo" aria-label="Livre Coding 🧑‍💻 - Pierre-Etienne" data-md-component="logo">
+      
+  <img src="../assets/intelligence-artificielle.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Livre Coding 🧑‍💻 - Pierre-Etienne
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Les Pandas plots backends
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/petoulemonde/livre_coding" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    petoulemonde/livre_coding
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Vibe%20Coding%20la%20derni%C3%A8re%20couche%20d%27abstraction%20en%20programmation/" class="md-tabs__link">
+          
+  
+  
+  Comprendre
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../L%27importance%20de%20la%20libert%C3%A9%20num%C3%A9rique/" class="md-tabs__link">
+          
+  
+  
+  Apprendre
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Full%20Guide%20to%20Building%20a%20Professional%20Portfolio%20with%20Python%2C%20Markdown%2C%20Git%2C%20and%20GitHub%20Pages%20-%20article/" class="md-tabs__link">
+          
+  
+  
+  Communiquer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Article%20-%20Mod%C3%A8le%20%C3%A9conomique%20des%20sites%20web%20et%20impact%20informationnelle/" class="md-tabs__link">
+          
+  
+  
+  Economie de la technologie
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Livre Coding 🧑‍💻 - Pierre-Etienne" class="md-nav__button md-logo" aria-label="Livre Coding 🧑‍💻 - Pierre-Etienne" data-md-component="logo">
+      
+  <img src="../assets/intelligence-artificielle.png" alt="logo">
+
+    </a>
+    Livre Coding 🧑‍💻 - Pierre-Etienne
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/petoulemonde/livre_coding" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    petoulemonde/livre_coding
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comprendre
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Comprendre
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Vibe%20Coding%20la%20derni%C3%A8re%20couche%20d%27abstraction%20en%20programmation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comprendre le vibe coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../La%20blockchain%20en%20sant%C3%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Place de la blockchain en santé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Documentation%202.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation 2.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apprendre
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apprendre
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L%27importance%20de%20la%20libert%C3%A9%20num%C3%A9rique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liberté numérique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Windows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scoop%20un%20gestionnaire%20de%20logiciel%20Windows%20tr%C3%A8s%20utile%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scoop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Le CLI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Le CLI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pourquoi%20apprendre%20%C3%A0%20coder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pourquoi apprendre à coder ?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Apprivoisez%20votre%20terminal%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apprivoisez votre terminal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Votre%20premier%20voyage%20de%20classe%20au%20pays%20du%20CLI%20-%20blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Votre premier voyage de classe au pays dy CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les Pandas plots backends
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les Pandas plots backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backends
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matplotlib
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plotly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hvplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hvplot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-word-before-you-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A word before you go
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Master%20the%20Python%27s%20documentation%20to%20make%20it%20an%20ally%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mastering Python Docs: Turn the Official Documentation into Your Secret Weapon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Communiquer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Communiquer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Full%20Guide%20to%20Building%20a%20Professional%20Portfolio%20with%20Python%2C%20Markdown%2C%20Git%2C%20and%20GitHub%20Pages%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer mon portfolio avec GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dynamic%20GitHub%20Pages%20-%20Panel%20%28pyodide-worker%29%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer des pages guthub dynamiques avec Panel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economie de la technologie
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Economie de la technologie
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Article%20-%20Mod%C3%A8le%20%C3%A9conomique%20des%20sites%20web%20et%20impact%20informationnelle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Article   Modèle économique des sites web et impact informationnelle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backends
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matplotlib
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plotly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hvplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hvplot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-word-before-you-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A word before you go
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Homepage
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../L%27importance%20de%20la%20libert%C3%A9%20num%C3%A9rique/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Apprendre
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Python
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="the-power-of-pandas-plots-backends">The Power of Pandas Plots: Backends</h1>
+<p><em>Create interactive graphics from Pandas effortlessly</em></p>
+<h2 id="context">Context</h2>
+<p>Python has a multitude of visualization packages, the three best known of which are: <a href="https://matplotlib.org/">Matplotlib</a> (and seaborn), <a href="https://plotly.com/">Plotly</a>, and <a href="https://hvplot.holoviz.org/">Hvplot</a>. Each of these 3 packages has its strengths, but requires an entry cost to pay to learn how to use this package, sometimes quite substantial.</p>
+<p>The idea for this article came to me when I discovered the <a href="https://blog.dailydoseofds.com/p/interactive-mind-map-of-all-pandas">Mind Map of Pandas Methods</a> offered by the <a href="https://blog.dailydoseofds.com/">Daily Dose of Data science newsletter</a> (a newsletter that I highly recommend). I was then discovering the Hvplot visualization package at the same time. I thought the idea of switching from one visualisation backend to another as easily as with Hvplot was brilliant (<a href="https://hvplot.holoviz.org/user_guide/Plotting_with_Plotly.html">here</a> is an example to switch from Hvplot to Plotly from Hvplot). Seeing that we could do it with pandas too, I found the idea too interesting not to share it.</p>
+<p>Pandas is at the heart of data science in Python, and we all know how to use it. But Matplotlib integrated into Pandas is aging, and is being overtaken both in ease of use and in presentation by other packages. The power of the Pandas visualization backend allows you to take advantage of the latest visualization packages for data exploration and result rendering, without having to invest time in learning these packages, which are nevertheless super powerful!</p>
+<h2 id="backends">Backends</h2>
+<p>Pandas was built on 2 packages, Numpy and Matplotlib. This explains why we use Matplotlib scripts to generate graphs, and therefore the generated graphs are matplotlib graphs.</p>
+<p>Since its creation, Pandas has evolved and offers the user the possibility to modify the visualization backend used by Pandas.</p>
+<p>The 6 available backends that I found during my research are:</p>
+<ul>
+<li>Plotnine (ggplot2)</li>
+<li>Plotly</li>
+<li>Altair</li>
+<li>Holoviews</li>
+<li>Hvplot</li>
+<li>Pandas_bokeh</li>
+<li>Matplotlib (default backend)</li>
+</ul>
+<p>There are several methods available to change a backend::</p>
+<ul>
+<li>2 global methods :</li>
+</ul>
+<pre><code class="language-python">pd.set_option(&quot;plotting.backend&quot;, '&lt;name of backend&gt;')  
+# OR  
+pd.options.plotting.backend = '&lt;name of backend&gt;'  
+</code></pre>
+<ul>
+<li>1 local method :</li>
+</ul>
+<pre><code class="language-python">df.plot(backend='&lt;name of backend&gt;', x='...')
+</code></pre>
+<p>Note: Changing the backend requires Pandas &gt;= 0.25, and sometimes requires specific dependencies to be important, such as with Hvplot below.</p>
+<p>Here are 2 examples:</p>
+<ul>
+<li>with Plotly :</li>
+</ul>
+<pre><code class="language-python">import pandas as pd # Basic packages  
+
+pd.options.plotting.backend = &quot;plotly&quot;  
+
+df = pd.DataFrame(dict(a=[1,3,2], b=[3,2,1]))  
+fig = df.plot()  
+fig.show()
+</code></pre>
+<ul>
+<li>with Hvplot :</li>
+</ul>
+<pre><code class="language-python">import numpy as np  
+import pandas as pd # Basic packages  
+
+import hvplot  
+import hvplot.pandas # ! Specific dependency to install  
+
+pd.options.plotting.backend = 'hvplot' # Backend modification  
+
+data = np.random.normal(size=[50, 2])  
+df = pd.DataFrame(data, columns=['x', 'y'])  
+
+df.plot(kind='scatter', x='x', y='y') # Plotting
+</code></pre>
+<h3 id="matplotlib">Matplotlib</h3>
+<p><a href="https://matplotlib.org/">Matplotlib</a> is the default visualization backend of Pandas. In other words, if you don’t specify a backend, Matplotlib will be used. It is an efficient package to quickly visualize your data to explore it or extract results, but it is aging and is being caught up in both ease of use and rendering power by other packages.</p>
+<p>The advantage of Matplotlib is that since Pandas has been built on Matplotlib since its creation, the integration of Matplotlib into pandas is perfect, all matplotlib functions can be used in Pandas.</p>
+<p>As a reminder, here are the 11 Matplotlib display methods integrated into Pandas :</p>
+<ul>
+<li>“area” for area plots,</li>
+<li>“bar” for vertical bar charts,</li>
+<li>“barh” for horizontal bar charts,</li>
+<li>“box” for box plots,</li>
+<li>“hexbin” for hexbin plots,</li>
+<li>“hist” for histograms,</li>
+<li>“kde” for kernel density estimate charts,</li>
+<li>“density” an alias for “kde”,</li>
+<li>“line” for line graphs,</li>
+<li>“pie” for pie charts,</li>
+<li>“scatter” for scatter plots.</li>
+</ul>
+<h3 id="plotly">Plotly</h3>
+<p><a href="https://plotly.com/">Plotly</a> is a visualization package developed by the company Plotly. The company has developed the framework Plotly.js, to allow interactive visualization of data within Python. The company Plotly also offers the Python dashboarding package [Dash](https://dash.plotly.com/.</p>
+<p>To use Plotly from Pandas, simply import <em>Plotly express</em> and change the backend:</p>
+<pre><code class="language-python">import pandas as pd  
+import plotly.express as px # Import packages  
+
+df = pd.read_csv(&quot;iris.csv&quot;)  
+
+# Modifying locally Pandas backend  
+df.plot.scatter(backend = &quot;plotly&quot;, x = &quot;sepal.length&quot;, y = &quot;sepal.width&quot;)
+</code></pre>
+<p>Pandas returns an object with the same type than Plotly:</p>
+<pre><code class="language-python">df.plot.scatter(backend = &quot;plotly&quot;, x = &quot;sepal.length&quot;, y = &quot;sepal.width&quot;)   
+# → &lt;class 'plotly.graph_objs._figure.Figure'&gt;  
+
+px.scatter(x=df[&quot;sepal.length&quot;], y = df[&quot;sepal.width&quot;])   
+# → &lt;class 'plotly.graph_objs._figure.Figure'&gt;
+</code></pre>
+<p>The advantage is that you can directly integrate a graphic created in Pandas into the Plotly universe, especially Dash!<br />
+One limitation is that Plotly’s integration with Pandas is not yet perfect as detailed on the Plotly website (<a href="https://plotly.com/python/pandas-backend/">details on the Plotly website</a>).</p>
+<h3 id="hvplot">Hvplot</h3>
+<p><a href="https://hvplot.holoviz.org/">Hvplot</a> is an interactive visualization package based on bokeh.<br />
+It is an exciting package, which I discovered some time ago and which continues to fascinate me, as much for Hvplot which integrates the notion of backend as in Pandas as for the <a href="https://holoviz.org/">Holoviz suite</a> and related packages like <a href="https://panel.holoviz.org/">Panel</a> to create dynamic client-side websites.</p>
+<p>Without even the notion of Pandas backend, Hvplot doesn’t require over-learning to start being used, just replace <em>.plot()</em> of Pandas with <em>.hvplot()</em>:</p>
+<pre><code class="language-python">import pandas as pd  
+import hvplot  
+
+df = pd.read_csv(&quot;iris.csv&quot;)  
+
+# Plot with Pandas  
+df.plot.scatter(backend = &quot;hvplot&quot;, x = &quot;sepal.length&quot;, y = &quot;sepal.width&quot;)   
+
+# Same plot with hvplot  
+df.hvplot.scatter(backend = &quot;hvplot&quot;, x = &quot;sepal.length&quot;, y = &quot;sepal.width&quot;) 
+</code></pre>
+<p>Using the Hvplot backend is done in the same way as for the Plotly backend, you just need to import a dependency of the Hvplot package:</p>
+<pre><code class="language-python">import numpy as np  
+import pandas as pd # Basic packages  
+
+import hvplot   
+import hvplot.pandas # Specific dependency to install  
+
+pd.options.plotting.backend = 'hvplot' # Backend modification  
+
+data = np.random.normal(size=[50, 2])  
+df = pd.DataFrame(data, columns=['x', 'y'])  
+
+df.plot(kind='scatter', x='x', y='y') # Plotting
+</code></pre>
+<p>Like Plotly, charts generated from Pandas with the hvplot backend are of type Hvplot :</p>
+<pre><code class="language-python">df.plot.scatter(backend = &quot;hvplot&quot;, x = &quot;sepal.length&quot;, y = &quot;sepal.width&quot;)   
+# → &lt;class 'holoviews.element.chart.Curve'&gt;  
+
+df.hvplot.scatter(backend = &quot;hvplot&quot;, x = &quot;sepal.length&quot;, y = &quot;sepal.width&quot;)   
+# → &lt;class 'holoviews.element.chart.Curve'&gt;
+</code></pre>
+<p>Hvplot is part of the extremely powerful Holoviz suite with many other associated tools to push data analysis very far, i.e. tools like <a href="https://panel.holoviz.org/">Panel</a>, <a href="https://geoviews.org/">geoviews</a>, <a href="https://datashader.org/">datashader</a> and others. This type of concordance allows to create graphs from pandas and still be able to take advantage of the Holoviz suite.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Pandas backends are an extremely efficient solution to discover and take advantage of the latest Python visualization packages without having to invest time: in 18 characters including spaces, it is possible to locally transform a standard matplotlib graph into an interactive Plotly graph, and therefore to take advantage of all the benefits of this type of visualization.</p>
+<p>However, this solution has certain limitations: it is not suited to highly advanced visualisation objectives that require a great deal of customisation such as advanced visualization in data journalism, because the integration of packages in Pandas is not yet perfect. In addition, this solution only covers visualization packages built on-top of Pandas, and excludes other visualization solutions such as D3.js.</p>
+<p>Hvplot is currently my favorite package for visualization: it is extremely easy to get started with at first, works with all the major data manipulation packages (Polars, Dask, Xray, …) and is part of a continuum of applications that allows you to go from graphs to dynamic full client-side websites.</p>
+<h2 id="a-word-before-you-go">A word before you go</h2>
+<p>During my research, I didn’t find as much documentation as I expected. I think the concept is great, so I expected a lot of articles. So feel free to tell me in the comments if you find this solution really useful, or if it’s just a cool thing with no real use.</p>
+<p>Thanks for reading!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.path", "navigation.expand", "navigation.sections", "navigation.tabs"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

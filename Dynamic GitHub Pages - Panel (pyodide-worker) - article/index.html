@@ -1,0 +1,1820 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Mon livre de coding - Pierre-Etienne Toulemonde">
+      
+      
+      
+        <link rel="canonical" href="https://petoulemonde.github.io/livre_coding/Dynamic%20GitHub%20Pages%20-%20Panel%20%28pyodide-worker%29%20-%20article/">
+      
+      
+        <link rel="prev" href="../Full%20Guide%20to%20Building%20a%20Professional%20Portfolio%20with%20Python%2C%20Markdown%2C%20Git%2C%20and%20GitHub%20Pages%20-%20article/">
+      
+      
+        <link rel="next" href="../Article%20-%20Mod%C3%A8le%20%C3%A9conomique%20des%20sites%20web%20et%20impact%20informationnelle/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../assets/intelligence-artificielle.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Créer des pages guthub dynamiques avec Panel - Livre Coding 🧑‍💻 - Pierre-Etienne</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynamic-githb-pages-with-panel" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Livre Coding 🧑‍💻 - Pierre-Etienne" class="md-header__button md-logo" aria-label="Livre Coding 🧑‍💻 - Pierre-Etienne" data-md-component="logo">
+      
+  <img src="../assets/intelligence-artificielle.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Livre Coding 🧑‍💻 - Pierre-Etienne
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Créer des pages guthub dynamiques avec Panel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/petoulemonde/livre_coding" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    petoulemonde/livre_coding
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Vibe%20Coding%20la%20derni%C3%A8re%20couche%20d%27abstraction%20en%20programmation/" class="md-tabs__link">
+          
+  
+  
+  Comprendre
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../L%27importance%20de%20la%20libert%C3%A9%20num%C3%A9rique/" class="md-tabs__link">
+          
+  
+  
+  Apprendre
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Full%20Guide%20to%20Building%20a%20Professional%20Portfolio%20with%20Python%2C%20Markdown%2C%20Git%2C%20and%20GitHub%20Pages%20-%20article/" class="md-tabs__link">
+          
+  
+  
+  Communiquer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Article%20-%20Mod%C3%A8le%20%C3%A9conomique%20des%20sites%20web%20et%20impact%20informationnelle/" class="md-tabs__link">
+          
+  
+  
+  Economie de la technologie
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Livre Coding 🧑‍💻 - Pierre-Etienne" class="md-nav__button md-logo" aria-label="Livre Coding 🧑‍💻 - Pierre-Etienne" data-md-component="logo">
+      
+  <img src="../assets/intelligence-artificielle.png" alt="logo">
+
+    </a>
+    Livre Coding 🧑‍💻 - Pierre-Etienne
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/petoulemonde/livre_coding" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    petoulemonde/livre_coding
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comprendre
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Comprendre
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Vibe%20Coding%20la%20derni%C3%A8re%20couche%20d%27abstraction%20en%20programmation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comprendre le vibe coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../La%20blockchain%20en%20sant%C3%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Place de la blockchain en santé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Documentation%202.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation 2.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apprendre
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apprendre
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L%27importance%20de%20la%20libert%C3%A9%20num%C3%A9rique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liberté numérique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Windows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scoop%20un%20gestionnaire%20de%20logiciel%20Windows%20tr%C3%A8s%20utile%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scoop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Le CLI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Le CLI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pourquoi%20apprendre%20%C3%A0%20coder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pourquoi apprendre à coder ?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Apprivoisez%20votre%20terminal%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apprivoisez votre terminal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Votre%20premier%20voyage%20de%20classe%20au%20pays%20du%20CLI%20-%20blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Votre premier voyage de classe au pays dy CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The%20Power%20of%20Pandas%20Plots%20Backends%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les Pandas plots backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Master%20the%20Python%27s%20documentation%20to%20make%20it%20an%20ally%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mastering Python Docs: Turn the Official Documentation into Your Secret Weapon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Communiquer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Communiquer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Full%20Guide%20to%20Building%20a%20Professional%20Portfolio%20with%20Python%2C%20Markdown%2C%20Git%2C%20and%20GitHub%20Pages%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer mon portfolio avec GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer des pages guthub dynamiques avec Panel
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer des pages guthub dynamiques avec Panel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualize-the-optimal-operation-that-dasbhoard-should-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualize the optimal operation that dasbhoard should have
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-step-transform-python-script-to-html-interactive-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First step : transform python script to HTML interactive script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-test-local-web-server-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First test: local web server deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-test-github-pages-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Second test: GitHub Pages deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problems-encountered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problems encountered
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economie de la technologie
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Economie de la technologie
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Article%20-%20Mod%C3%A8le%20%C3%A9conomique%20des%20sites%20web%20et%20impact%20informationnelle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Article   Modèle économique des sites web et impact informationnelle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualize-the-optimal-operation-that-dasbhoard-should-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualize the optimal operation that dasbhoard should have
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-step-transform-python-script-to-html-interactive-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First step : transform python script to HTML interactive script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-test-local-web-server-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First test: local web server deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-test-github-pages-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Second test: GitHub Pages deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problems-encountered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problems encountered
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Homepage
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../Full%20Guide%20to%20Building%20a%20Professional%20Portfolio%20with%20Python%2C%20Markdown%2C%20Git%2C%20and%20GitHub%20Pages%20-%20article/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Communiquer
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="dynamic-githb-pages-with-panel">Dynamic GitHb Pages with Panel</h1>
+<p><em>How do you create interactive and client-side GitHub Pages ? The first stone in an ambitious edifice</em>
+date: 04/10/2024</p>
+<h2 id="introduction">Introduction</h2>
+<p>For several years now, I’ve been dreaming of having a nice portfolio to showcase my projects as a budding data scientist. After almost 1 year of reflection, trials, failures and a few successes, I created my first portfolio on GitHub Pages. Happy with this personal achievement, I wrote an article about it to share the fruit of my research with the community, available <a href="https://towardsdatascience.com/full-guide-to-build-a-professionnal-portfolio-with-python-markdown-git-and-github-page-for-66d12f7859f0">here</a>.</p>
+<p>This portfolio was created using the mkdocs python package. Mkdocs is a wonderful package for this kind of project, but with a few shortcomings, the main one being the total lack of interactivity with the reader. The further I got into creating my portfolio, the more frustrated I became by the lack of interactivity. My constraints at the time (still true today) were to have everything executed free of charge and client-side, so the GitHub Pages solution was perfectly suited to my needs.</p>
+<p>The further I got into my static portfolio, the more the idea of having a dynamic portfolio system popped into my head. My goal was clear: find a solution to create a reader-interactive portfolio hosted on GitHub Pages. In my research, I found almost no articles dealing with this subject, so I started looking for software, packages and code snippets to address this problem.</p>
+<p>The research question guiding this article is: how do I create a dynamic, full-client-side website? My technical constraints are as follows: Use GitHub Pages.</p>
+<p>About dashboarding package, I choose to limit myself to Panel from the holoviz suite, because it’s a great package and I’d like to improve my skills with it.</p>
+<p>For the purposes of this article, I’ve searched for and found many more or less similar solutions. This article is therefore the first in a series of articles, the aim of which will be to present different solutions to the same research question.</p>
+<p>But what’s the point of having dynamic Github pages? GitHub Pages is a very interesting solution for organization/project presentation, 100% hosted by GitHub, free of charge, with minimal configuration and no server maintenance. The ability to include dynamic content is a powerful way of communicating about your organization or project. For data professionals, it’s a very useful solution for quickly generating a dynamic and interesting portfolio.</p>
+<p>Holoviz is an exciting and extremely rich set of pacakges. It’s a complete visualization and dashboarding solution, powerful on reasonably sized data and big data. This solution supports all major input data manipulation packages (polars, pandas, dask, X-ray, …), and offers high-level syntax for generating interactive visualizations with a minimum of code. This package also allows you to customize the output and, in particular, to choose your visualization back-end such as pandas (I’ve written <a href="https://medium.com/towards-data-science/the-power-of-pandas-plots-backends-6a08d52071d2">an article</a> about it if you’d like to find out more). To find out more about this great suite of packages, I suggest <a href="https://towardsdatascience.com/3-ways-to-build-a-panel-visualization-dashboard-6e14148f529d">this article</a>.</p>
+<h2 id="method">Method</h2>
+<p>For this job, my technical background imposes a few contingencies:</p>
+<ul>
+<li>I don’t yet know how to code well enough in JavaScript to make complete scripts and write pieces of code directly in JavaScript,</li>
+<li>the dashboarding package will be Panel in order to improve my skills. If the need arises, I won’t rule out repeating the exercise with other dasbhoarding packages (such as Dash, strealint, NiceGUI, etc.). However, this is not my priority.</li>
+</ul>
+<p>For this article, my technical environment is as follows:</p>
+<ul>
+<li>python packages: Panel</li>
+</ul>
+<p>I use conda and VSCode for my scripts and environment management. Don’t worry if you use other solutions, it won’t have any impact on the rest.</p>
+<p>During my research, I identified 3 scripts of varying complexity and visual appeal from my researches, which will serve as good test standards:</p>
+<ul>
+<li>A simple application called ‘simple app’:</li>
+</ul>
+<pre><code class="language-python">import panel as pn  
+
+pn.extension(design=&quot;material&quot;)  
+
+slider = pn.widgets.IntSlider(name=&quot;Select a value&quot;, value=10, start=0, end=100)  
+pn.Column(  
+    &quot;# Hello Panel + Quarto!&quot;,  
+    pn.rx(&quot;You selected: {}&quot;).format(slider),  
+).servable()
+</code></pre>
+<p><a href="https://awesome-panel.github.io/holoviz-quarto/getting-started.html">Source</a></p>
+<ul>
+<li>A more complex application called ‘big app’:</li>
+</ul>
+<pre><code class="language-python">import io  
+import panel as pn  
+import pandas as pd  
+import hvplot.pandas  
+
+pn.extension(template='fast')  
+
+pn.state.template.title = 'hvPlot Explorer'  
+
+upload = pn.widgets.FileInput(name='Upload file', height=50)  
+select = pn.widgets.Select(options={  
+    'Penguins': 'https://raw.githubusercontent.com/mwaskom/seaborn-data/master/penguins.csv',  
+    'Diamonds': 'https://raw.githubusercontent.com/mwaskom/seaborn-data/master/diamonds.csv',  
+    'Titanic': 'https://raw.githubusercontent.com/mwaskom/seaborn-data/master/titanic.csv',  
+    'MPG': 'https://raw.githubusercontent.com/mwaskom/seaborn-data/master/mpg.csv'  
+})  
+
+def add_data(event):  
+    b = io.BytesIO()  
+    upload.save(b)  
+    b.seek(0)  
+    name = '.'.join(upload.filename.split('.')[:-1])  
+    select.options[name] = b  
+    select.param.trigger('options')  
+    select.value = b  
+
+upload.param.watch(add_data, 'filename')  
+
+def explore(csv):  
+    df = pd.read_csv(csv)  
+    explorer = hvplot.explorer(df)  
+    def plot_code(**kwargs):  
+        code = f'```python\n{explorer.plot_code()}\n```'  
+        return pn.pane.Markdown(code, sizing_mode='stretch_width')  
+    return pn.Column(  
+        explorer,  
+        '**Code**:',  
+        pn.bind(plot_code, **explorer.param.objects())  
+    )  
+
+widgets = pn.Column(  
+    &quot;Select an existing dataset or upload one of your own CSV files and start exploring your data.&quot;,  
+    pn.Row(  
+        select,  
+        upload,  
+    )  
+).servable()    
+
+output = pn.panel(pn.bind(explore, select)).servable()  
+
+pn.Column(widgets, output)
+</code></pre>
+<p><a href="https://panel.holoviz.org/getting_started/build_app.html">Source</a></p>
+<ul>
+<li>A dashboard using the ‘Material’ Panel Template, which I call ‘material dasbhoard’:</li>
+</ul>
+<pre><code class="language-python">import hvplot.pandas  
+import numpy as np  
+import pandas as pd  
+import panel as pn  
+
+PRIMARY_COLOR = &quot;#0072B5&quot;  
+SECONDARY_COLOR = &quot;#B54300&quot;  
+CSV_FILE = (  
+    &quot;https://raw.githubusercontent.com/holoviz/panel/main/examples/assets/occupancy.csv&quot;  
+)  
+
+pn.extension(design=&quot;material&quot;, sizing_mode=&quot;stretch_width&quot;)  
+
+@pn.cache  
+def get_data():  
+  return pd.read_csv(CSV_FILE, parse_dates=[&quot;date&quot;], index_col=&quot;date&quot;)  
+
+data = get_data()  
+
+data.tail()  
+
+def transform_data(variable, window, sigma):  
+    &quot;&quot;&quot;Calculates the rolling average and identifies outliers&quot;&quot;&quot;  
+    avg = data[variable].rolling(window=window).mean()  
+    residual = data[variable] - avg  
+    std = residual.rolling(window=window).std()  
+    outliers = np.abs(residual) &gt; std * sigma  
+    return avg, avg[outliers]  
+
+
+def get_plot(variable=&quot;Temperature&quot;, window=30, sigma=10):  
+    &quot;&quot;&quot;Plots the rolling average and the outliers&quot;&quot;&quot;  
+    avg, highlight = transform_data(variable, window, sigma)  
+    return avg.hvplot(  
+        height=300, legend=False, color=PRIMARY_COLOR  
+    ) * highlight.hvplot.scatter(color=SECONDARY_COLOR, padding=0.1, legend=False)  
+
+get_plot(variable='Temperature', window=20, sigma=10)  
+
+variable_widget = pn.widgets.Select(name=&quot;variable&quot;, value=&quot;Temperature&quot;, options=list(data.columns))  
+window_widget = pn.widgets.IntSlider(name=&quot;window&quot;, value=30, start=1, end=60)  
+sigma_widget = pn.widgets.IntSlider(name=&quot;sigma&quot;, value=10, start=0, end=20)  
+
+bound_plot = pn.bind(  
+    get_plot, variable=variable_widget, window=window_widget, sigma=sigma_widget  
+)  
+
+widgets = pn.Column(variable_widget, window_widget, sigma_widget, sizing_mode=&quot;fixed&quot;, width=300)  
+pn.Column(widgets, bound_plot)  
+
+pn.template.MaterialTemplate(  
+    site=&quot;Panel&quot;,  
+    title=&quot;Getting Started App&quot;,  
+    sidebar=[variable_widget, window_widget, sigma_widget],  
+    main=[bound_plot],  
+).servable();
+</code></pre>
+<p><a href="https://panel.holoviz.org/getting_started/build_app.html">Source</a></p>
+<p>To meet my goal of deploying both web and GitHub Pages, I will test the deployment of each of the :</p>
+<ul>
+<li>on a local python server, generated using <code>python -m http.server</code>,</li>
+<li>GitHub Pages.</li>
+</ul>
+<h3 id="visualize-the-optimal-operation-that-dasbhoard-should-have">Visualize the optimal operation that dasbhoard should have</h3>
+<p>Before I start testing, I need to have a benchmark of how each application should work in a perfect world. To do this, I use the local emulation function of the :</p>
+<pre><code class="language-bash">panel serve simple_app.py --dev
+</code></pre>
+<p>Explanation:</p>
+<ul>
+<li><code>panel serve simple_app.py</code> : visualiaze the dashboard</li>
+<li><code>— dev</code> : reload the dashboard each time the underlying files are modified (may require installation of one or more other packages, in particular to track whether or not the underlying files have been modified)</li>
+</ul>
+<p>Here is the expected result:</p>
+<ul>
+<li>The simple app :</li>
+</ul>
+<p><img alt="" src="../assets/simple_app.gif" />
+Simple app visualization, Image is by the author</p>
+<ul>
+<li>The big app :</li>
+</ul>
+<p><img alt="" src="../assets/big_app.gif" />
+Big app visualization, Image is by the author</p>
+<ul>
+<li>The material dasbhoard :</li>
+</ul>
+<p><img alt="" src="../assets/material_dashboard.gif" />
+Material dashboard visualization, Image is by the author</p>
+<p>These visualizations will enable me to see if everything is running smoothly and within reasonable timescales during my deployment tests.</p>
+<h2 id="results">Results</h2>
+<h3 id="first-step-transform-python-script-to-html-interactive-script">First step : transform python script to HTML interactive script</h3>
+<p>The Panel package transforms a panel application python script into an HTML application in 1 line of code:</p>
+<pre><code class="language-bash">panel convert simple_app.py --to pyodide-worker --out docs
+</code></pre>
+<p>Explanation:</p>
+<ul>
+<li><code>panel convert</code> : python script conversion panel package command</li>
+<li><code>simple_app.py</code> : python script to convert</li>
+<li><code>— to pyodide-worker</code> : Panel can transcribe the Python application into several types of support that can be integrated into HTML productions. In this article, I focus on the output <code>pyodide-worker</code></li>
+<li><code>— out docs</code> : output folder for the 2 files (HTML and JavaScript) generated.</li>
+</ul>
+<p>In the docs folder (‘ — to docs’ part of the line of code), 2 files with the same name as the python script and the extensions ‘html’ and ‘js’ should appear. These scripts will enable us to integrate our application into web content. This code conversion (from python to HTML to JavaScript) is made possible by WebAssembly. Pyodide is a port of CPython to WebAssembly/Emscripte (more info here: <a href="https://pyodide.org/en/stable/">https://pyodide.org/en/stable/).</a>.)</p>
+<p>If you’re not familiar with WebAssembly, I invite you to devour <a href="https://developer.mozilla.org/en-US/docs/WebAssembly">Mozilla’s article</a> on the subject. I’ll be doing an article on the history, scope and potential impact of WebAssembly, which I think will be a real game changer in the years to come.</p>
+<h3 id="first-test-local-web-server-deployment">First test: local web server deployment</h3>
+<ol>
+<li>
+<p>Emulate the local web server with python: <code>python -m http.server</code>. This command will return a local URL for your browser to connect to (URL like: 127.0.0.1:8000).</p>
+</li>
+<li>
+<p>Click on the HTML script of our python application</p>
+</li>
+</ol>
+<p><em>Information</em>: when browsing our files via the HTML server, to automatically launch the desired application when we open its folder, title the HTML and JavaScript files ‘index.html’ and ‘index.js’. Example :</p>
+<pre><code class="language-markdown">app/  
+|- index.html  
+|- index.js
+</code></pre>
+<p>When the app folder is opened in the local HTML server, index.html is automatically launched.</p>
+<p>Test report for deployment on local html server:</p>
+<ul>
+<li>Simple app:✅</li>
+<li>Big app:✅</li>
+<li>Material Dashboard:✅</li>
+</ul>
+<p>After testing each of the 3 applications listed above, this solution works perfectly with all of them, with no loss of speed in loading and using the applications.</p>
+<h3 id="second-test-github-pages-deployment">Second test: GitHub Pages deployment</h3>
+<p>In this article, I’ll quickly go over the configuration part of GitHub Pages on GitHub, as I described it in detail in my <a href="https://towardsdatascience.com/full-guide-to-build-a-professionnal-portfolio-with-python-markdown-git-and-github-page-for-66d12f7859f0">previous article</a>.</p>
+<ol>
+<li>Warning from step 1: the ‘docs’ file hosting the HTML and JavaScript scripts must be named ‘docs’ and placed at the root of the git repository. These are 2 prerequisites for deploying applications on GitHub Pages. Neither the folder name nor its location can be changed.</li>
+<li>2 possibilities :<br />
+    2.a. Rename the app files ‘index.html’ and ‘index.js’, and place them directly in ‘docs’. This solution will open the GitHub Pages of your repository directly on the app,<br />
+    2.b. Create an ‘index.html’ file directly in ‘docs’, and add a path to your application’s HTML file.</li>
+</ol>
+<p>Here is the content of ‘index.html’ that I created during my deployment tests:</p>
+<pre><code class="language-html">1. &lt;a href=&quot;https://petoulemonde.github.io/article_dynamic_webpages/simple_app_pyodide/simple_app.html&quot;&gt;Simple app&lt;/a&gt;  
+&lt;br/&gt;  
+2. &lt;a href=&quot;https://petoulemonde.github.io/article_dynamic_webpages/big_app_pyodide/big_app.html&quot;&gt;Big app&lt;/a&gt;  
+&lt;br/&gt;  
+3. &lt;a href=&quot;https://petoulemonde.github.io/article_dynamic_webpages/material_dashboard_pyodide/material_dashboard.html&quot;&gt;Material dashboard&lt;/a&gt;
+</code></pre>
+<p>Explanation:</p>
+<ul>
+<li><code>https://petoulemonde.github.io/</code>: URL of my portfolio</li>
+<li><code>article_dynamic_webpages/</code>: my working repo for this article</li>
+<li>
+<p><code>simple_app_pyodide/simple_app.html</code>: HTML folder/application to open. In the repo, the file is stored in <strong>docs</strong>/simple_app_pyodide/simple_app.html, but don’t mention ‘docs’ in the absolute path. Why this difference between the file explorer and the link? GitHub deploys from the docs folder, ‘docs’ is its working root.</p>
+</li>
+<li>
+<p>Push in the remote repo (in my previous example, the ‘article_dynamic_webpages’ repo).</p>
+</li>
+<li>
+<p>In the repo, enable the creation of a github project page. In the configuration page, here’s how to configure the GitHub page:</p>
+</li>
+</ul>
+<p><img alt="" src="../assets/deployment.webp" /></p>
+<p>Configuration for deployment on GitHub Pages, Image is by the author</p>
+<p>This is where the ‘docs’ folder is essential if we want to deploy our application, otherwise we won’t be able to enter any deployment branches in ‘master’.</p>
+<p>Test report: Deployment on GitHub pages:</p>
+<ul>
+<li>Simple app: ✅</li>
+<li>Big app: ✅</li>
+<li>Material dashboard: ✅</li>
+</ul>
+<p>Concerning solution 2.b. : This is a particularly interesting solution, as it allows us to have a static home page for our website or portfolio, and then distribute it to special dynamic project pages. It opens the door to both static and dynamic GitHub Pages, using mkdocs for the static aspect and its pretty design, and Panel for the interactive pages. I’ll probably do my next article on this mkdocs + Panel (pyodide-worker) deployment solution, and I’ll be delighted to count you among my readers once again.</p>
+<h3 id="problems-encountered">Problems encountered</h3>
+<p>The dashboards tested so far don’t distribute to other pages on the site/portfolio, so the only alternative identified is to create a static home page, which redistributes to dashboards within the site. Is it possible to have a site with several pages without using a static page? The answer is yes, because dasbhaords can themselves integrate links, including links to other dashboards on the same site.</p>
+<p>I’ve modified the Material app code to add a link (adding <code>pn.pane.HTML(…)</code> ):</p>
+<pre><code class="language-python">pn.template.MaterialTemplate(  
+  site=&quot;Panel&quot;,  
+  title=&quot;Getting Started App&quot;,  
+  sidebar=[  
+    pn.pane.HTML('&lt;a href=&quot;127.0.0.1:8000/docs/big_app_pyodide/big_app.html&quot;&gt;Big app&lt;/a&gt;'), # New line !  
+    variable_widget,  
+    window_widget,  
+    sigma_widget],  
+  main=[bound_plot],  
+).servable();
+</code></pre>
+<p>This adds a link to the application’s side bar:</p>
+<p><img alt="" src="../assets/side_bar.webp" /></p>
+<p>Material dashboard with link visualization, Image is by the author</p>
+<p>While the proof here isn’t pretty, it show that a dashboard can integrate links to other pages, so it’s possible to create a site with several pages using Panel alone — brilliant! In fact, I’m concentrating here on the dasbhoarding part of Panel, but Panel can also be used to create static pages, so without even mastering mkdocs, you can create sites with several pages combining static and dynamic elements.</p>
+<h2 id="discussion">Discussion</h2>
+<p>Panel is a very interesting and powerful package that lets you create dynamic websites easily and hosted on GitHub Pages, thanks in particular to the magic of WebAssembly. The package really lets you concentrate on creating the dasbhoard, then in just a few lines convert that dasbhoard into web content. Coupled with the ease of use of GitHub Pages, Panel makes it possible to rapidly deploy data dashboards.</p>
+<p>This solution, while brilliant, has several limitations that I’ve come across in the course of my testing. The first is that it’s not possible to integrate user-editable and executable code. I’d like to be able to let users explore the data in their own way, by sharing the code I’ve written with them so that they can modify it and explore the data in their own way.<br />
+The second and final limitation is that customizing dashboards is not as easy as creating them. Hvplot offers, via the <em>explorer</em> tool, a visual solution for exploring data and creating charts. But once in the code, I find customization a little difficult. The packge is awesome in terms of power and functionality, and I’m probably still lacking a bit of skill on it, so I think it’s mainly due to my lack of practice on this package rather than the package itself.</p>
+<p>If you’ve made it this far, thank you for your attention! Your comments on my previous article were very helpful. Thanks to you, I’ve discovered Quarto and got some ideas on how to make my articles more interesting for you, the reader. Please leave me a comment to tell me how I could improve my article, both technically and visually, so that I can write an even more interesting article for you next time.</p>
+<p>Good luck on your Pythonic adventure!<br />
+Pierre-Etienne</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.path", "navigation.expand", "navigation.sections", "navigation.tabs"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

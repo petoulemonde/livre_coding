@@ -1,0 +1,1496 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Mon livre de coding - Pierre-Etienne Toulemonde">
+      
+      
+      
+        <link rel="canonical" href="https://petoulemonde.github.io/livre_coding/Votre%20premier%20voyage%20de%20classe%20au%20pays%20du%20CLI%20-%20blog/">
+      
+      
+        <link rel="prev" href="../Apprivoisez%20votre%20terminal%20-%20article/">
+      
+      
+        <link rel="next" href="../The%20Power%20of%20Pandas%20Plots%20Backends%20-%20article/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../assets/intelligence-artificielle.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Votre premier voyage de classe au pays dy CLI - Livre Coding 🧑‍💻 - Pierre-Etienne</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#votre-premier-voyage-de-classe-au-pays-du-cli-blog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Livre Coding 🧑‍💻 - Pierre-Etienne" class="md-header__button md-logo" aria-label="Livre Coding 🧑‍💻 - Pierre-Etienne" data-md-component="logo">
+      
+  <img src="../assets/intelligence-artificielle.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Livre Coding 🧑‍💻 - Pierre-Etienne
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Votre premier voyage de classe au pays dy CLI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/petoulemonde/livre_coding" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    petoulemonde/livre_coding
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Vibe%20Coding%20la%20derni%C3%A8re%20couche%20d%27abstraction%20en%20programmation/" class="md-tabs__link">
+          
+  
+  
+  Comprendre
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../L%27importance%20de%20la%20libert%C3%A9%20num%C3%A9rique/" class="md-tabs__link">
+          
+  
+  
+  Apprendre
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Full%20Guide%20to%20Building%20a%20Professional%20Portfolio%20with%20Python%2C%20Markdown%2C%20Git%2C%20and%20GitHub%20Pages%20-%20article/" class="md-tabs__link">
+          
+  
+  
+  Communiquer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Article%20-%20Mod%C3%A8le%20%C3%A9conomique%20des%20sites%20web%20et%20impact%20informationnelle/" class="md-tabs__link">
+          
+  
+  
+  Economie de la technologie
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Livre Coding 🧑‍💻 - Pierre-Etienne" class="md-nav__button md-logo" aria-label="Livre Coding 🧑‍💻 - Pierre-Etienne" data-md-component="logo">
+      
+  <img src="../assets/intelligence-artificielle.png" alt="logo">
+
+    </a>
+    Livre Coding 🧑‍💻 - Pierre-Etienne
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/petoulemonde/livre_coding" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    petoulemonde/livre_coding
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comprendre
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Comprendre
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Vibe%20Coding%20la%20derni%C3%A8re%20couche%20d%27abstraction%20en%20programmation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comprendre le vibe coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../La%20blockchain%20en%20sant%C3%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Place de la blockchain en santé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Documentation%202.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation 2.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apprendre
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apprendre
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../L%27importance%20de%20la%20libert%C3%A9%20num%C3%A9rique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Liberté numérique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Windows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scoop%20un%20gestionnaire%20de%20logiciel%20Windows%20tr%C3%A8s%20utile%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scoop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Le CLI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Le CLI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pourquoi%20apprendre%20%C3%A0%20coder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pourquoi apprendre à coder ?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Apprivoisez%20votre%20terminal%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apprivoisez votre terminal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Votre premier voyage de classe au pays dy CLI
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Votre premier voyage de classe au pays dy CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#un-voyage-de-classe-ca-se-prepare-valise-train-cest-parti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un voyage de classe, ça se prépare ! Valise, train, c'est parti !
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-premier-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le premier contact 👽
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simmiscer-dans-la-vie-locale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S'immiscer dans la vie locale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-vous-de-tracer-votre-route" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A vous de tracer votre route !
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The%20Power%20of%20Pandas%20Plots%20Backends%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les Pandas plots backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Master%20the%20Python%27s%20documentation%20to%20make%20it%20an%20ally%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mastering Python Docs: Turn the Official Documentation into Your Secret Weapon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Communiquer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Communiquer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Full%20Guide%20to%20Building%20a%20Professional%20Portfolio%20with%20Python%2C%20Markdown%2C%20Git%2C%20and%20GitHub%20Pages%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer mon portfolio avec GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dynamic%20GitHub%20Pages%20-%20Panel%20%28pyodide-worker%29%20-%20article/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Créer des pages guthub dynamiques avec Panel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economie de la technologie
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Economie de la technologie
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Article%20-%20Mod%C3%A8le%20%C3%A9conomique%20des%20sites%20web%20et%20impact%20informationnelle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Article   Modèle économique des sites web et impact informationnelle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#un-voyage-de-classe-ca-se-prepare-valise-train-cest-parti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un voyage de classe, ça se prépare ! Valise, train, c'est parti !
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-premier-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le premier contact 👽
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simmiscer-dans-la-vie-locale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S'immiscer dans la vie locale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-vous-de-tracer-votre-route" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A vous de tracer votre route !
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Homepage
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../L%27importance%20de%20la%20libert%C3%A9%20num%C3%A9rique/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Apprendre
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../Pourquoi%20apprendre%20%C3%A0%20coder/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Le CLI
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="votre-premier-voyage-de-classe-au-pays-du-cli-blog">Votre premier voyage de classe au pays du CLI - blog</h1>
+<p><em>A la découverte du CLI #2</em></p>
+<p>Vous avez sûrement déjà entendu parler du terminal d'un ordinateur, mais si vous savez cette petite fenêtre noire moche que tous les hackers utilisent dans les films ? Le terminal et par extension le CLI <em>(command line interface)</em> a super mauvaise presse, et pourtant c'est un endroit génial avec pleins de belles choses à découvrir, presque un nouveau pays avec ses us et coutumes, ses traditions. 
+Pour vous accoutumer à ce superbe pays, je vous propose donc de partir avec moi en voyage de classe dans ce fabuleux pays !</p>
+<p><em>Note technique : Je suis sous windows, donc j'utiliserai le terminal et les raccourcis de windows. Pour les linuxiens et autres unixiens : je vous sais, vous avez déjà fait quelques voyages dans ce pays, vous saurez vous en sortir. Pour les Mac-eux, vous vous infligez un handicap dès le départ, c'est courageux 😉 Je rigole bien sûr, le terminal des Mac est très bien et n'a rien à envier aux autres. Une recherche web par ci par là et vous trouverez les alternatives rapidement (pour les raccourcis claviers, essayez à minima de remplacer Win par Commande et Cmd par Terminal).</em></p>
+<p><em>J'ai déjà abordé certains éléments dans mon article du 25 mai : <a href="https://penseecomplexe.substack.com/p/apprivoisez-votre-terminal">Apprivoisez votre terminal</a>. La pédagogie c'est la répétition, je profite donc de cet article pour faire de la pédagogie 😉</em></p>
+<h2 id="un-voyage-de-classe-ca-se-prepare-valise-train-cest-parti">Un voyage de classe, ça se prépare ! Valise, train, c'est parti !</h2>
+<p>Bienvenue à ce merveilleux voyage de classe ! Pour cette aventure, je serai votre animateur et guide de voyage ! Vous allez voir on va passer de super moments.</p>
+<p>Comme tout nouveau pays, il faut s'y rendre. On est des petits chanceux, ici même pas besoin d'avion, de bateau ou de voiture. Allumez votre ordinateur, connectez vous à votre session, et c'est bon, on y est ! </p>
+<p>En tant que guide, ma première tâche est de vous apprendre à trouver un autochtone. Plusieurs solutions : 
+- la rapide : sur votre clavier, appuyez sur Win + R. Une petite fenêtre va s'ouvrir du nom de <em>Exécuter</em>. Tapez alors <em>cmd</em> puis appuyez sur <em>Entrée</em>
+- la standard : cherchez dans vos applications <em>cmd</em> et ouvrez là (pour les fans de raccourcis clavier : Win + Q pour ouvrir une zone de recherche d'applications)
+Une petite fenêtre a écriture blanche sur fond noir avec une barre verticale qui clignote vient de s'ouvrir et vous regarde fixement ? Promis c'est pas un animal sauvage, c'est un autochtone ! Vous avez trouvé un autochtone, c'est une première réussite non négligeable de votre voyage, bravo fier explorateur ! </p>
+<p>Courte histoire de cet autochtone, pour la raconter au copain quand vous rentrerez : le CMD, de son nom complet local <em>command</em> et de nom français <em>interpréteur de commande</em>, est le Shell de Windows. Avant l'arrivée des interfaces graphiques des ordinateurs, du temps des dinosaures préhistoriques (j'exagère, c'était les années 1970), les utilisateurs des ordinateurs utilisaient principalement le clavier pour interagir avec l'ordinateur : ils écrivaient une commande puis l'envoyaient à l'ordinateur qui exécutait la commande. Un peu comme aujourd'hui on double clique sur une application pour l'ouvrir, à l'époque on tapait le nom du logiciel puis l'ordinateur l'ouvrait. On faisait à peu près la même chose, mais au clavier ! C'est ça le CLI, c'est l'interaction avec l'ordinateur via des commandes qu'on envoie, qu'on oppose au GUI (Graphique User Interface) qui sont nos interfaces jolies et colorés qu'on connait.
+Le CLI demeure encore aujourd'hui essentiel à bien des égard ! La gestion de serveur à distance par exemple : installer un GUI sur un serveur, ça prend de la mémoire et du processeur inutilement, donc on utilise le CLI pour interagir avec le serveur en laissant un maximum de mémoire et de processeur pour l'usage <em>serveur</em>. Pour les développeurs, le CLI permet de créer des scripts pour réaliser un ensemble de commandes d'un coup qui demanderait en GUI de faire plusieurs clics à différents endroits, c'est un gros gain d'automatisation.</p>
+<h2 id="le-premier-contact">Le premier contact 👽</h2>
+<p>C'est l'HEURE, LE moment du premier contact avec cet autochtone si bizarre ! Et justement, nous allons faire vos premiers échanges avec cet autochtones !</p>
+<p>Pour un premier contact, le mieux est de dire bonjour. Comment faire ? Tapez <code>echo 'Hello world!'</code>, et vous allez voir que l'autochtone va vous répondre <em>Hello world!</em>. 
+En réalité, vous dites à votre ordinateur d'écrire (commande <code>echo</code> ) la chaîne de caractère 'hello world!'. Marche avec n'importe quoi d'autre, vous pouvez même lui faire faire la vache <code>echo 'Meuuuuuuuuuh!'</code></p>
+<p>Premier contact ✅ Mais faire faire le perroquet à l'autochtone va pas vous permettre d'aller très loin ... La ville est grande, et vous souhaitez en savoir un peu plus sur la ville (ici, la ville correspond au dossier dans lequel vous êtes actuellement, à l'ensemble des éléments inclut dans ce dossier, comme quand vous êtes dans votre explorateur de fichier graphique). Je vais donc vous apprendre à demander votre chemin (c'est normal en tant que guide 🙂) :
+- <code>dir</code> : demande à l'autochtone de lister les fichiers et les dossiers dans le dossier courant (le dossier courant est le dossier où on est actuellement)
+- <code>tree</code> : lister les fichiers, dossiers et sous-dossiers a partir du dossier courant
+- <code>cd ..</code> : remonter au dossier parent (le dossier dans lequel est contenu le dossier courant)
+- <code>cd ...dossier...</code> (remplacer ...dossier... par le nom du dossier que vous voulez ouvrir, comme dans l'interface graphique) : ouvrir le dossier souhaité.
+Regardez avec attention ce qui se trouve avant la barre qui clignote, car quand vous aurez mémorisé les liens (l'enchaînement de dossier), vous pourrez vous y téléporter (c'est pas beau la puissance du CLI) ! 
+Exemple : Avant la barre qui clignote, vous observer ça : <code>C:\Users\penseecomplexe\Documents</code>. Quel que soit votre localisation en ville, vous pouvez vous téléporter dans ce dossier en tapant : <code>cd C:\\Users\\penseecopplexe\\Documents</code> (ajouter <em>cd</em> au début et doubler les antislashs) et paf ! Vous vous êtes téléporté ! </p>
+<p>L'autochtone est pointilleux : une majuscule c'est une majuscule, un espace c'est un espace, si vous vous trompez il ne va pas savoir de quoi vous parlez ! 
+Il se peut aussi que l'autochtone soit bavard, très bavard ! Vous avez une solution pour lui couper la parole (arrêter l'exécution d'un commande une fois lancée) : touches Ctrl + C et l'autochtone repasse en mode écoute, attendant votre prochaine commande.</p>
+<p>En tant que guide, je trouve que j'ai déjà bien bossé, je fais une pause 🍹🏖️</p>
+<p>Bon, je culpabilise déjà de vous laisser seul ... 
+Let's go pour apprendre à parler l'autochtone ! Pour mieux échanger avec l'autochtone, il faut apprendre son langage, et justement, l'autochtone est toujours content de vous lister tous les mots qu'il connait !
+Tapez <code>help</code> et vous aurez le dictionnaire autochtone local ! Vous obtenez alors un dico de l'ensemble des mots qui existe et une courte description. Pour en savoir plus sur 1 mot spécifique, tapez <code>help ...commande...</code> (remplacer ...commande... par la commande que vous souhaitez). Vous pouvez même noter tout ce que vous dit l'autochtone pour le réouvrir plus tard : <code>help &gt; output.txt</code>, qui permet d'enregistrer ce que vous dit l'autochtone dans le fichier texte output.txt dans le dossier courant. Vous avez maintenant un petit dico à emporter partout, et si vous l'oubliez, il suffit de redemander à un autre autochtone.</p>
+<p>Comme je suis un super guide, je vous est même prévu un petit aide mémoire :</p>
+<pre><code class="language-bash">echo 'Hello world!' # Afficher le texte hello world!
+
+dir # Afficher le cotenu du dossier courant
+tree # afficher les fichiers, dossiers et sous-dossiers du dossier courant
+cd .. #Remonter dans le dossier parent
+cd ...dossier... # Ouvrirle dossier cité : cd Document
+
+help # Afficher l'ensemble des commande disponibles
+help ....commande... # Affiche l'aide pour une commande spécifique : help cd
+help &gt; output.txt # Enregistrer la sortie dans le fichier texte output.txt dans le dossier courant : help cd &gt; output.txt
+</code></pre>
+<h2 id="simmiscer-dans-la-vie-locale">S'immiscer dans la vie locale</h2>
+<p>Vous connaissez un peu mieux la ville, ses quartiers, son plan. Mais la beauté d'un endroit ne se mesure par à son plan 2D, mais la richesse de sa vie locale ! C'est donc le moment d'explorer la vie locale, d'explorer des nouveaux endroits et de travailler votre autochtone.</p>
+<p>Les autochtones savent tous quelle météo il fera pour les 2 prochaines semaine et ça partout ! Pour leur demander le temps, tapez <code>curl wttr.in</code>. Une ville en particulier ? Ils savent aussi : <code>curl wttr.in/Las vegas</code>. Ils savent même les phases de la lune : <code>curl wttr.in/moon</code>. Vous êtes plutôt crypto ? Les autochtones aussi : <code>curl rate.sx</code> ! Vous avez investi dans le bitcoin, les autochtones peuvent vous aider à suivre le marché : <code>curl rate.sx/BTC</code>. C'est dingue toutes les ressemblances que vous avez vous et l'autochtone 🙂 </p>
+<p>Comme les autochtones sont les gens accueillants, ils vous autorisent à apporter votre propres modifications à leur espace : installer vos propres logiciels. Vous savez le faire via le store et la souris, mais c'est pas trop la culture du coin, ici c'est le CLI (et pas 'ici c'est Paris !' pour les rebelles du fond du bus !). Pas de soucis, avec Scoop, vous allez pouvoir faire tout ça ! Pour installer scoop, il va falloir Googler un peu (il faut bien faire une pause dans ce monde sans couleur et sans graphisme 🙂 je vous donne même le lien en tant que guide génial : https://scoop.sh/).
+Une fois scoop installé, vous pouvez installer python <code>scoop install python</code> et lui faire dire bonjour : <code>python -c "print('Hello world, I'm python 🐍')"</code>. Vous pouvez même faire parler des vaches : </p>
+<pre><code class="language-python">python # vous devrait voir '&gt;&gt;&gt;' apparaitre, ça veut dire que vous parler à l'autochtone python, et pas un autochtone lambda. C'est un privilège ! 
+pip install pipx
+pipx install pycowsay # Installe des librairies nécessaires
+cowsay &quot;Meuuuuuuuuh!&quot; # Faire parler la vache
+</code></pre>
+<p>Qui peut dire qu'on sait pas s'amuser chez les autochtones maintenant ? 🙂</p>
+<p>Vous pouvez aussi suivre toute la ville d'un œil : <code>scoop install btop</code> puis <code>btop</code>. Votre petite fenêtre noire va se transformer en vrai tableau de bord de capitaine de toute l'activité sur votre ordinateur !
+Pour quitter ce tableau bord, tapez sur Ctrl + C.</p>
+<p>Vous pouvez installer et parler à des IA avec Ollama :</p>
+<pre><code class="language-bash">scoop install ollama # Invoque le super-autochtone : selon qui sait faire parler des IA ! 
+ollama serve # Le super-autochtone rentre en trance, et pourra prendre possession d'autres autochtones pour vous parler. En réalité, cette commande lance un serveur sur lequel l'IA avec laquelle on voudra échanger tournera
+</code></pre>
+<p>Initiez une discussion avec un nouvel autochtone (ouvrez une nouvelle fenêtre cmd), et tapez <code>ollama install qwen3:0.6b</code>  pour installer cette IA, puis <code>qwen3</code> pour commencer à parler avec cette IA.
+Une fois que vous avez fini de discuter, vous avez juste à partir (fermer les 2 fenêtres utilisées), et tout redeviendra normal, la vie reprendra son cours. </p>
+<p>J'ai consacré une article à Scoop, pour expliquer ce que c'est et les autres solutions sur le marché : <a href="https://penseecomplexe.substack.com/p/scoop-un-gestionnaire-de-logiciel">Scoop : un gestionnaire de logiciel Windows très utile !</a>. Si vous vous demandez pourquoi il faut installer scoop alors que vous avez déjà installé des logiciels via le store ou directement via un installeur, je vous conseille vivement cet article pour comprendre la nécessite d'avoir un bon logiciel de gestion de package.</p>
+<h2 id="a-vous-de-tracer-votre-route">A vous de tracer votre route !</h2>
+<p>Vous voici arrivé au bout de mon apprentissage petit bambou, je n'ai plus rien à vous apprendre, je suis si fier de vous 🥹 
+Vous avez les clés en main ! A vous maintenant d'être malin et d'assembler a votre guise tout ce que vous avez appris pour générer des actions soit simples (1 commande existante) soit complexe de plusieurs commandes. Grâce au quelques commandes citées, vous savez naviguez (et même vous téléporter !). Grâce a <em>help</em>, vous savez demander de l'aide si nécessaire. Grâce a <em>scoop</em>, vous pouvez même installer des nouvelles applications dans votre ville digitale !
+Et puis vous êtes pas tout seul tout seul, vous avez quand même le droit de googler si besoin, voir même d'utiliser ChatGPT, je vous autorise pour cette fois 🙂</p>
+<p>Bref, le CLI c'est la vie ! Et maintenant, a votre imagination de jouer !</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.path", "navigation.expand", "navigation.sections", "navigation.tabs"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
