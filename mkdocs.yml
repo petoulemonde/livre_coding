@@ -35,4 +35,11 @@ theme:
   favicon: assets/intelligence-artificielle.png
   icon:
     repo: fontawesome/brands/git-alt
+  features:
+    - navigation.path
+    - navigation.expand
+    - navigation.sections
+    - navigation.tabs
 
+plugins: 
+  - rss
